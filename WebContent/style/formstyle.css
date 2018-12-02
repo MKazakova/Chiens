@@ -1,0 +1,334 @@
+@charset "ISO-8859-1";
+body{
+	background-image: url("fon2.jpg");
+}
+.buttonLeft, .buttonLeftFirst, .TabbuttonLeftFirst {
+	float: left;
+	margin-top: 2px;
+	margin-right: 2px;
+    height:35px;
+    font: bold 10pt verdana;
+    background: linear-gradient(to top, #64b6f6, #b3dafb);
+    color: #0c71c2;
+    border-radius: 10px;
+    border: 0.5px solid  #2697f2;
+    text-shadow: #ebf4fe 0.05em 0.05em 0.05em;	
+    box-shadow: #000040 0.1em 0.1em 0.2em;	    
+}
+.buttonLeftFirst, .buttonLeftFirst2, .TabbuttonLeftFirst {
+	margin-left: 10%;	   
+	}
+	
+fieldset{
+	margin-left: 10%;	
+	margin-right: 10%;		
+	background: white;
+    border-radius: 10px; 
+    border: 1px solid  #2697f2; 
+    box-shadow: #74733a 0.2em 0.2em 0.3em;	
+    color:#000040;
+    font: bold 10pt verdana;
+    padding-left:4%;
+}
+
+h3{
+	margin-left: 10%;	
+	font: italic bold 12pt verdana;
+	color: #64b6f6;
+	text-shadow: #000040 0.1em 0.1em 0.2em;	
+}
+
+.grosErreur{
+	margin-left: 10%;	
+	font: italic bold 12pt verdana;
+	color: red;
+	text-shadow: #000040 0.1em 0.1em 0.2em;		
+}
+
+h4{	
+	font: italic bold 12pt verdana;
+	color: #64b6f6;
+	text-shadow: #000040 0.1em 0.1em 0.2em;	
+	text-align:center;	
+}
+h2, h1{
+    margin-left: 5%;	
+	font: italic bold 14pt verdana;
+	color: #64b6f6;
+	text-shadow: #000040 0.1em 0.1em 0.2em;		
+}
+
+h1{
+	margin-left: 7%;
+	font: italic bold 16pt verdana;	
+}
+.info{
+    color: #283e24; 
+    font: italic 9pt verdana;   
+}
+
+.echec{
+	color: red;
+    font: italic 9pt verdana;   
+}
+
+.fiche{
+	margin-left: 5%;
+}
+
+header a {
+	float: right;
+	color:white;
+	text-shadow: #74733a 0.05em 0.05em 0.1em;	    
+}
+
+.check{
+	display: block;
+    padding-left: 15px;
+    text-indent: -15px;
+    margin-left:3%;
+}
+
+legend{
+	color: #2697f2;
+	text-shadow: #000040 0.05em 0.05em 0em;	
+}
+.field{
+	margin-left: 3px;	
+	margin-right: none;		
+	background: white;
+    border: 1px solid  #2697f2; 
+    box-shadow: none;	
+    color:#000040;
+    font: bold 10pt verdana;
+    padding-left:0%;	
+}
+
+.elevage{
+	color: white;
+}
+
+.fiche2{
+	margin-left: 10%;
+	margin-right: none;		
+	background: white;
+    border: 1px solid  #2697f2;
+    text-shadow: #000040 0.05em 0.05em 0.1em;	
+    box-shadow: #74733a 0.05em 0.05em 0.1em;
+    color:#2697f2;
+    font: bold 12pt verdana;
+    padding-left:0%;
+}
+.imputcheck{
+	width: 13px;
+    height: 13px;
+    padding: 0;
+    margin:0;
+    vertical-align: bottom;
+    position: relative;
+    top: -1px;	
+}
+.ficheRace{
+	margin-left: 10%;	
+	width: 60%;	
+	border-collapse: collapse;	
+	background: white;
+}
+
+table{
+    border-collapse: collapse;		
+	border: 2px solid white;
+}
+
+.dogtable{
+	margin-left: 10%;
+	background: white;
+}
+
+.zatemnenie {
+    background: rgba(102, 102, 102, 0.5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+  
+.okno {
+    width: 800px;;
+    height: 700px;
+    text-align: center;
+    padding: 15px;
+    border: 3px solid #0000cc;
+    border-radius: 10px;
+    color: #0000cc;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    background: #fff;
+}
+.zatemnenie:target {display: block;}
+.close {
+    display: inline-block;
+    border: 1px solid #0000cc;
+    color: #0000cc;
+    padding: 0 12px;
+    margin: 10px;
+    text-decoration: none;
+    background: #f2f2f2;
+    font-size: 14pt;
+    cursor:pointer;
+}
+.close:hover {background: #e6e6ff;}
+
+.imageDedans{
+	width:300px;
+}   
+   
+.dogtable>tr:nth-child(even) { background: #ffffff; }
+
+td, th{
+	height: 50px;
+	width: 200px;
+	margin-right: 15px;
+	padding: 5px;
+	border: 1px solid #d1d2d0;
+}
+
+.resultatReceherche{
+	float:left;
+	background: white;
+	border: 1px solid #0c71c2;
+	padding: 5px;
+	margin:5px;
+	width: 250px;
+	height:250px; 
+	cursor: pointer;
+}
+
+
+.imageRecherche{
+	width: 240px;
+}
+
+.resultatGlobal{
+	margin-left:7%;
+}
+.prog1, .prog2, .prog4, .prog3, .prog5, .prog6, .prog7, .prog8, .prog9, .prog10{
+    background-color:#bee0fc;
+    border-radius: 13px; 
+    margin-left:15px;
+}
+
+.prog1 > div {
+    background-color:#000040;
+    height: 15px;
+    border-radius: 10px;
+    width: 10%;	
+}
+
+.prog2 > div {
+    background-color:#000040;
+    height: 15px;
+    border-radius: 10px;
+    width: 20%;	
+}
+
+.prog3 > div {
+    background-color:#000040;
+    height: 15px;
+    border-radius: 10px;
+    width: 30%;	
+}
+
+.prog4 > div {
+    background-color:#000040;
+    height: 15px;
+    border-radius: 10px;
+    width: 40%;	
+}
+
+.prog5 > div {
+    background-color:#000040;
+    height: 15px;
+    border-radius: 10px;
+    width: 50%;	
+}
+
+.prog6 > div {
+    background-color:#000040;
+    height: 15px;
+    border-radius: 10px;
+    width: 60%;	
+}
+
+.prog7 > div {
+    background-color:#000040;
+    height: 15px;
+    border-radius: 10px;
+    width: 70%;	
+}
+
+.prog8 > div {
+    background-color:#000040;
+    height: 15px;
+    border-radius: 10px;
+    width: 80%;	
+}
+
+.prog9 > div {
+    background-color:#000040;
+    height: 15px;
+    border-radius: 10px;
+    width: 90%;	
+}
+
+.prog10 > div {
+    background-color:#000040;
+    height: 15px;
+    border-radius: 10px;
+    width: 100%;	
+}
+
+
+.image{
+	height:280px;
+}
+
+input, select, textarea{
+	background: #f2f9ff;
+    padding: 4px;	
+}
+
+.dog{
+	width:200px;
+	float:right;
+	margin-right:4%;
+}
+
+label{
+    float: left;
+    width: 300px;
+    height:25px;
+    margin: 3px 0px 0px 0px;
+    font: bold 10pt verdana;
+    text-shadow: #000040 0.05em 0.05em 0em;	
+    color: #64b6f6;
+    padding: 3px;
+}
+
+.delete, .details{
+	float: left;
+	width: 30px;
+	background: none;
+}
+
+.small{
+	width: 80px;
+}
+
+

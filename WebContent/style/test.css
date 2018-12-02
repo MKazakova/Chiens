@@ -1,0 +1,113 @@
+body{
+	background-image: url("fon2.jpg");
+}
+.liens{
+	display: flex;
+	position: absolute;
+	align: right;
+}
+h3{
+	margin-left: 10%;	
+	font: italic bold 14pt Comic Sans MS;
+	color: white;
+	text-shadow: #000040 0.05em 0.05em 0.1em;	
+}
+.adAcces{
+    position:absolute;
+    width: 350px;
+    height:180px;
+    margin-top: 15%;
+    padding: 3px;
+    transform: translate(0, -50%);
+    border: none;   
+}
+.container {
+    position: relatif;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    height:120px;
+    background-color: rgba(255,255,255,.6);
+}
+
+.title{
+    font-size: 36px;
+    font-family: Comic Sans MS;
+    color: white;
+    text-shadow: #000040  0.05em 0.05em 0.05em;	
+    padding-top: 10px;
+    text-align: center;
+}
+
+.menu{
+    list-style: none;
+    display: flex;
+    justify-context: center;
+    margin-right:5%;
+    margin-bottom: 3%;
+}
+
+.menu li{
+	float:none;
+    margin-left:5%;
+	align: center;
+}
+
+.menu li a{
+	color: #0c71c2;
+	font-family: Comic Sans MS;
+	text-decoration: none;
+}
+
+.dom{
+	float: right;
+}
+
+fieldset{
+	margin-left: 10%;	
+	margin-right: 10%;		
+	background: rgba(255,255,255,.6);
+	border: 3px double #0c71c2; 
+    border-radius: 20px; 
+    box-shadow: #000040 0.3em 0.3em 0.5em;	
+    color: #0c71c2;
+	font-family: Comic Sans MS;
+    padding-left:4%;
+}
+
+.buttonLeft, .buttonLeftFirst, .TabbuttonLeftFirst, .buttonLeftFirst2{
+	float: left;
+	margin-top: 2px;
+	margin-right:2px;
+    height:35px;
+    font: bold 10pt verdana;
+    background: linear-gradient(to top, #64b6f6, #b3dafb);
+    color: #0c71c2;
+    border-radius: 10px;
+    border: 0.5px solid  #2697f2;
+    text-shadow: #ebf4fe 0.05em 0.05em 0.05em;	
+    box-shadow: #000040 0.1em 0.1em 0.2em;	    	    
+}
+
+.buttonLeftFirst, .buttonLeftFirst2, .TabbuttonLeftFirst {
+	margin-left: 10%;	   
+}
+	
+.left{
+	float:left;
+    background:#d9dde1;
+}	
+
+.leftFirst{
+	float:left;
+	margin-left: 5%;
+	background:#d9dde1;
+}
+
+.dog{
+	float: right;
+}
+
+.echec{
+	color: red;
+}

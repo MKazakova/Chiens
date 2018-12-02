@@ -1,0 +1,125 @@
+body{
+	background-image: url("fon2.jpg");
+}
+.liens{
+	display: flex;
+	position: absolute;
+	align: right;
+}
+.adAcces{
+    position:absolute;
+    width: 350px;
+    height:180px;
+    margin-top: 15%;
+    padding: 3px;
+    transform: translate(0, -50%);
+    border: none;   
+}
+
+*{  box-sizing:border-box} 
+.tabs {  
+    padding: 0px; 
+    margin: 0 auto; 
+    position: relative; 
+    border: 1px solid #DEE8F2; 
+    top: 15px; 
+} 
+section { 
+    display: none;  
+    padding: 15px; 
+    background: white; 
+    position: absolute; 
+    top: 0; 
+    left: 180px; 
+} 
+
+p { 
+    margin: 0; 
+} 
+input { 
+    display: none; 
+} 
+label { 
+    display: block; 
+    width: 180px; 
+    padding: 15px; 
+    color: white;
+    text-shadow: #000040  0.05em 0.05em 0.05em;
+    font-family: Comic Sans MS; 
+    background: rgba(255,255,255,.5);
+    cursor: pointer; 
+} 
+input:checked + label { 
+    color: #0c71c2; 
+    background: white; 
+} 
+#tab1:checked ~ #content1, #tab2:checked ~ #content2, #tab3:checked ~ #content3, #tab4:checked ~ #content4 { 
+    display: block; 
+} 
+section { 
+    animation: scale 0.7s ease-in-out; 
+} 
+@keyframes scale { 
+    0% { 
+    transform: scale(0.9); 
+    opacity: 0; 
+    } 
+50% { 
+transform: scale(1.005); 
+opacity: 0.5; 
+   } 
+100% { 
+transform: scale(1); 
+opacity: 1; 
+  } 
+}
+
+.container {
+    position: relatif;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    height:120px;
+    background-color: rgba(255,255,255,.6);
+}
+
+.title{
+ 	font-size: 36px;
+ 	font-family: Comic Sans MS;
+	color: white;
+ 	text-shadow: #000040  0.05em 0.05em 0.05em;	
+	padding-top: 10px;
+ 	text-align: center;
+}
+
+.menu{
+ 	list-style: none;
+ 	display: flex;
+ 	justify-context: center;
+ 	margin-right:5%;
+ 	margin-bottom: 3%;
+}
+.menu li{
+	float:none;
+    margin-left:5%;
+	align: center;
+}
+
+.menu li a{
+	color: #0c71c2;
+	font-family: Comic Sans MS;
+	text-decoration: none;
+}
+
+.photo{
+	float: right;
+	width: 700px;
+}
+.photo2{
+	float: left;
+	padding: 20px;
+	width: 800px;
+}
+.dom{
+	float: right;
+}

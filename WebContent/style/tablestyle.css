@@ -1,0 +1,187 @@
+@charset "ISO-8859-1";
+body{
+	background-image: url("fon2.jpg");
+}
+.buttonLeft, .buttonLeftFirst, .TabbuttonLeftFirst, .buttonLeftFirst2{
+	float: left;
+	margin-top: 2px;
+	margin-right:2px;
+    height:35px;
+    font: bold 10pt verdana;
+    background: linear-gradient(to top, #64b6f6, #b3dafb);
+    color: #0c71c2;
+    border-radius: 10px;
+    border: 0.5px solid  #2697f2;
+    text-shadow: #ebf4fe 0.05em 0.05em 0.05em;	
+    box-shadow: #000040 0.1em 0.1em 0.2em;	    	    
+}
+
+.buttonLeftFirst, .buttonLeftFirst2, .TabbuttonLeftFirst {
+	margin-left: 10%;	   
+}
+	
+.left{
+	float:left;
+    background:#d9dde1;
+}	
+
+.leftFirst{
+	float:left;
+	margin-left: 5%;
+	background:#d9dde1;
+}
+
+.close{
+	float:right;
+	margin:none;
+	padding:none;
+}
+
+fieldset{
+	margin-left: 10%;	
+	margin-right: 10%;		
+	background: white;
+    border-radius: 10px; 
+    box-shadow: #004000 0.2em 0.2em 0.3em;	
+    color:#1e4b1d;
+    font: bold 10pt verdana;
+    padding-left:4%;
+}
+
+h3{
+	margin-left: 10%;	
+	font: italic bold 12pt verdana;
+	color: #64b6f6;
+	text-shadow: #000040 0.05em 0.05em 0.1em;	
+}
+
+h4{
+	margin-left: 5%;
+	font: italic bold 12pt verdana;
+	color: #64b6f6;
+	text-shadow: #000040 0.05em 0.05em 0.1em;
+}
+
+h1{
+	margin-left: 10%;	
+	color: white;
+	text-shadow: #000040 0.05em 0.05em 0.1em;	
+}
+
+h2{
+    margin-left: 5%;	
+	font: italic bold 14pt verdana;
+	color: #808000;
+	text-shadow: #1e4b1d 0.1em 0.1em 0.2em;		
+}
+
+.info{
+    color: #283e24;
+    font: italic 9pt verdana;   
+}
+
+.echec, .error{
+	color: red;
+    font: italic 9pt verdana;   
+}
+
+
+header a {
+	float: right;
+	color:white;
+	text-shadow: #004000 0.05em 0.05em 0.1em;	    
+}
+
+.ficheRace{
+	margin-left: 10%;	
+	margin-top: 5%;
+	width: 60%;		
+	border-collapse: collapse;	
+	background: white;
+}
+
+table{
+	border-collapse: collapse;
+	border: 1px solid #2697f2;		
+}
+
+.dogtable{
+	margin-left: 10%;
+	background: white;	
+}
+
+tr:nth-child(even) { 
+	background: #eeeedd; 
+	}
+	
+td, th{	
+	height: 50px;
+	width: 200px;
+	margin-right: 15px;
+	padding: 5px;
+	border: 1px solid #d1d2d0;
+}
+
+.image{
+	height:280px;
+}
+
+input, select, textarea{
+	background: #eeeedd;
+    padding: 4px;	
+}
+
+.dog{
+	width:200px;
+	float:right;
+	margin-right:4%;
+}
+
+label{
+    float: left;
+    width: 300px;
+    height:25px;
+    margin: 3px 0px 0px 0px;
+    font: bold 10pt verdana;
+    text-shadow: #584e4e 0.05em 0.05em 0em;	
+    color: #808000;
+    padding: 3px;
+}
+
+.delete, .details, .open{
+	float: left;
+	width: 30px;
+	background: none;
+}
+
+.small{
+	width: 80px;
+}
+.small1{
+	width: 40px;
+}
+.small2{
+	width: 90px;
+}
+option:checked {
+    background: red linear-gradient(0deg, red 0%, red 100%);
+}
+
+.pop-outer{
+	background-color: rgba(0, 0, 0, 0.5);
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100;
+	width: 100%;
+}
+
+.pop-inner{
+	background-color: white;
+	width: 400px;
+	height: 150px;	
+	padding: 5px;
+	margin:25% auto;
+}
+
+
