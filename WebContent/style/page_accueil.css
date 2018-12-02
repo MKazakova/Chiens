@@ -1,12 +1,12 @@
 @charset "UTF-8";
 
 body{
-	background-image: url("fon2.jpg");
+    background-image: url("fon2.jpg");
 }
 .liens{
-	display: flex;
-	position: absolute;
-	align: right;
+    display: flex;
+    position: absolute;
+    align: right;
 }
 .adAcces{
     position:absolute;
@@ -19,8 +19,8 @@ body{
 }
 
 .bouton{
-	border-radius: 10px;
-	background-color:white;
+    border-radius: 10px;
+    background-color:white;
 }
 
 .container {
@@ -32,26 +32,26 @@ body{
     background-color: rgba(255,255,255,.6);
 }
 h3{
-	margin-left: 10%;	
-	font: italic bold 12pt verdana;
-	color: #64b6f6;
-	text-shadow: #000040 0.1em 0.1em 0.2em;	
+    margin-left: 10%;	
+    font: italic bold 12pt verdana;
+    color: #64b6f6;
+    text-shadow: #000040 0.1em 0.1em 0.2em;	
 }
 
 .accueil{	
-	margin-top: 15px;
-	font: italic bold 10pt verdana;
-	color: #64b6f6;
-	text-shadow: #000040 0.05em 0.05em 0.1em;	
-	margin-right: 20px;
-	background-color: rgba(255,255,255,.5);
-	margin-left: 10px;
+    margin-top: 15px;
+    font: italic bold 10pt verdana;
+    color: #64b6f6;
+    text-shadow: #000040 0.05em 0.05em 0.1em;	
+    margin-right: 20px;
+    background-color: rgba(255,255,255,.5);
+    margin-left: 10px;
 }
 
 .field{
-	margin-left: 3px;	
-	margin-right: none;		
-	background: white;
+    margin-left: 3px;	
+    margin-right: none;		
+    background: white;
     border: 1px solid  #2697f2; 
     box-shadow: none;	
     color:#000040;
@@ -59,7 +59,7 @@ h3{
     padding-left:0%;	
 }
 .imputcheck{
-	width: 13px;
+    width: 13px;
     height: 13px;
     padding: 0;
     margin:0;
@@ -68,13 +68,13 @@ h3{
     top: -1px;	
 }
 input, select, textarea{
-	background: #f2f9ff;
+    background: #f2f9ff;
     padding: 4px;	
 }
 .buttonLeft, .buttonLeftFirst, .TabbuttonLeftFirst {
-	float: left;
-	margin-top: 2px;
-	margin-right: 2px;
+    float: left;
+    margin-top: 2px;
+    margin-right: 2px;
     height:35px;
     font: bold 10pt verdana;
     background: linear-gradient(to top, #64b6f6, #b3dafb);
@@ -85,12 +85,14 @@ input, select, textarea{
     box-shadow: #000040 0.1em 0.1em 0.2em;	    
 }
 .buttonLeftFirst, .buttonLeftFirst2, .TabbuttonLeftFirst {
-	margin-left: 10%;	   
-	}
-legend{
-	color: #2697f2;
-	text-shadow: #000040 0.05em 0.05em 0em;	
+    margin-left: 10%;	   
 }
+
+legend{
+    color: #2697f2;
+    text-shadow: #000040 0.05em 0.05em 0em;	
+}
+
 label{
     float: left;
     width: 300px;
@@ -102,15 +104,15 @@ label{
     padding: 3px;
 }
 .check{
-	display: block;
+    display: block;
     padding-left: 15px;
     text-indent: -15px;
     margin-left:3%;
 }
 fieldset{
-	margin-left: 10%;	
-	margin-right: 10%;		
-	background-color: white;
+    margin-left: 10%;	
+    margin-right: 10%;		
+    background-color: white;
     border-radius: 10px; 
     border: 1px solid  #2697f2; 
     box-shadow: #74733a 0.2em 0.2em 0.3em;	
@@ -119,12 +121,12 @@ fieldset{
     padding-left:4%;
 }
 .dws-menu{
-	margin-left: 20%;
-	padding: 0;
+    margin-left: 20%;
+    padding: 0;
 }
 
 .dws-menu ul, .dws-menu ol{
-	list-style: none;
+    list-style: none;
 }
 
 .dws-menu ul {
@@ -134,65 +136,67 @@ fieldset{
 
 
 .dws-menu > ul{
-	display: flex;
-	justify-context: center;
+    display: flex;
+    justify-context: center;
 }
 
 .dws-menu > ul li a{
-	display: block;
-	background: white;
-	padding: 15px 30px 15px 40px;
-	font-size: 14px;
-	text-decoration: none;
-	text-transform:uppercase;
+    display: block;
+    background: white;
+    padding: 15px 30px 15px 40px;
+    font-size: 14px;
+    text-decoration: none;
+    text-transform:uppercase;
 }
 .dws-menu > ul li > a i.fa{
-	position:absolute;
-	top: 15px;
-	left: 20px;	
+    position:absolute;
+    top: 15px;
+    left: 20px;	
 }
 .dws-menu >ul li{
-	float:none;
-	border-right: 1px solid #dad9af;
+    float:none;
+    border-right: 1px solid #dad9af;
 }
 .dws-menu >ul li:first-child{
-	border-left: 1px solid #808000;
+    border-left: 1px solid #808000;
 }
 
 .dws-menu >ul li:last-child{
-	border-right: 1px solid #808000;
+    border-right: 1px solid #808000;
 }
+
 .dws-menu li a:hover{
-	background: #d9d4b6;
+    background: #d9d4b6;
     box-shadow: #584e4e 0.1em 0.1em 0em;	
     color:white;
     transition: all 0.3s ease;
 }
+
 A:visited { 
-	color: #0080ff; 
-	} 
+    color: #0080ff; 
+} 
 
 .dws-menu li ul{
-	position: absolute;
-	min-width:250px;
+    position: absolute;
+    min-width:250px;
     display: none;
 }
 
 .dws-menu li > ul li{
-	border: 1px solid #d9d4b6;	
+    border: 1px solid #d9d4b6;	
 }
 
 .dws-menu li > li ul a{
-	padding: 10px;
-	text-decoration: none;
+    padding: 10px;
+    text-decoration: none;
 }
 
 .dws-menu li:hover > ul{
-	display: block;
+    display: block;
 }
 
 .error{
-	color:red;
+    color:red;
 }
 
 option:checked {
@@ -201,22 +205,21 @@ option:checked {
 
 
 .pop-outer{
-	background-color: rgba(0, 0, 0, 0.5);
-	position: fixed;
-	top: 0;
-	left: 0;
-	height: 100;
-	width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100;
+    width: 100%;
 }
 
 .pop-inner{
-	background-color: #fff;
-	width: 500px;
-	height: 300px;
-	padding: 25px;
-	margin:25% auto;
+    background-color: #fff;
+    width: 500px;
+    height: 300px;
+    padding: 25px;
+    margin:25% auto;
 }
-
 
 .title{
     font-size: 36px;
@@ -234,19 +237,19 @@ option:checked {
     margin-bottom: 3%;
 }
 .menu li{
-	float:none;
+    float:none;
     margin-left:5%;
-	align: center;
+    align: center;
 }
 
 .menu li a{
-	color: #0c71c2;
-	font-family: Comic Sans MS;
-	text-decoration: none;
+    color: #0c71c2;
+    font-family: Comic Sans MS;
+    text-decoration: none;
 }
 
 .tabs-content {
-	position: relatif;
+    position: relatif;
     top: 130px;
     width:960px;
     height:1000px;
@@ -291,8 +294,8 @@ option:checked {
 }
 
 .zatemnenie:target {
-	display: block;
-	}
+    display: block;
+}
 
 .close {
     display: inline-block;
@@ -306,31 +309,31 @@ option:checked {
     cursor:pointer;
 }
 .close:hover {
-	background: #e6e6ff;
+    background: #e6e6ff;
 }
 
 .imageDedans{
-	width:300px;
+    width:300px;
 }   
 
 .resultatReceherche{
-	float:left;
-	background: white;
-	border: 1px solid #0c71c2;
-	padding: 5px;
-	margin:5px;
-	width: 250px;
-	height:250px; 
-	cursor: pointer;
+    float:left;
+    background: white;
+    border: 1px solid #0c71c2;
+    padding: 5px;
+    margin:5px;
+    width: 250px;
+    height:250px; 
+    cursor: pointer;
 }
 
 
 .imageRecherche{
-	width: 240px;
+    width: 240px;
 }
 
 .resultatGlobal{
-	margin-left:7%;
+    margin-left:7%;
 }
 .prog1, .prog2, .prog4, .prog3, .prog5, .prog6, .prog7, .prog8, .prog9, .prog10{
     background-color:#bee0fc;
@@ -339,24 +342,24 @@ option:checked {
 }
 
 .prog1 > div {
-  	background-color:#000040;
-   	height: 15px;
-   	border-radius: 10px;
-   	width: 10%;	
+    background-color:#000040;
+    height: 15px;
+    border-radius: 10px;
+    width: 10%;	
 }
 
 .prog2 > div {
-   	background-color:#000040;
-   	height: 15px;
-   	border-radius: 10px;
-   	width: 20%;	
+    background-color:#000040;
+    height: 15px;
+    border-radius: 10px;
+    width: 20%;	
 }
 
 .prog3 > div {
-   	background-color:#000040;
-   	height: 15px;
-   	border-radius: 10px;
-   	width: 30%;	
+    background-color:#000040;
+    height: 15px;
+    border-radius: 10px;
+    width: 30%;	
 }
 
 .prog4 > div {
@@ -410,22 +413,22 @@ option:checked {
 
 
 .image{
-	height:280px;
+    height:280px;
 }
 table{
     border-collapse: collapse;		
-	border: 2px solid white;
+    border: 2px solid white;
 }
 td, th{
-	height: 50px;
-	width: 300px;
-	margin-right: 15px;
-	padding: 5px;
-	border: 1px solid #d1d2d0;
+    height: 50px;
+    width: 300px;
+    margin-right: 15px;
+    padding: 5px;
+    border: 1px solid #d1d2d0;
 }
 
 #sombre{
-	background: rgba(102, 102, 102, 0.5);
+    background: rgba(102, 102, 102, 0.5);
     width: 100%;
     height: 100%;
     position: absolute;
@@ -434,89 +437,89 @@ td, th{
 }
 
 .nonvalide{
-	color: #bcc0c0;
+     color: #bcc0c0;
 }
 
 .tabs {
-	list-style-type: none;
-	padding: 0;
-	margin: 0;
-	position: relative;
+     list-style-type: none;
+     padding: 0;
+     margin: 0;
+     position: relative;
 }
 .tabs:after {
-	content: "";
-	clear: both;
-	display: block;
-	height: 240px;
+     content: "";
+     clear: both;
+     display: block;
+     height: 240px;
 }
 .tabs li {
-	float: left;
+     float: left;
 }
 .tabs li > input {
-	display: none;
+     display: none;
 }
 .tabs li > label {
-	display: inline-block;
-	border: 1px solid #999;
-	border-right-width: 0;
-	border-bottom-width: 0;
-	height: 30px;
-	width: 5px;
-	line-height: 30px;
-	padding: 5px 20px;
-	cursor: pointer;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
+     display: inline-block;
+     border: 1px solid #999;
+     border-right-width: 0;
+     border-bottom-width: 0;
+     height: 30px;
+     width: 5px;
+     line-height: 30px;
+     padding: 5px 20px;
+     cursor: pointer;
+     -webkit-user-select: none;
+     -moz-user-select: none;
+     -ms-user-select: none;
+     user-select: none;
 }
 .tabs li:last-child > label {
-	border-right-width: 1px;
+     border-right-width: 1px;
 }
 .tabs .tab-content {
-	display: none;
-	position: absolute;
-	left: 0;
-	top: 45px;
-	padding: 20px;
-	border: none;
-	overflow-y: auto;
-	vertical-align: middle;
+     display: none;
+     position: absolute;
+     left: 0;
+     top: 45px;
+     padding: 20px;
+     border: none;
+     overflow-y: auto;
+     vertical-align: middle;
 }
  
 .tabs li > input:checked + label {
-	background-color: white;
+     background-color: white;
 }
 .tabs li > input:checked ~ .tab-content {
-	display: block;
+     display: block;
 }
 
 .dogtable{
-	margin-left: 20px;
-	background: white;	
+     margin-left: 20px;
+     background: white;	
 }
 
 .dogtable tr:nth-child(even) { 
-	background: #eeeedd; 
+     background: #eeeedd; 
 }
 
 .echec{
-	color: #620000;
-	margin-left: 10%;
+     color: #620000;
+     margin-left: 10%;
 }
 
 .pes{
-	float: left;
-	margin-right: 20px;
-	margin-top: 15px;
-	margin-left: 10px;
+     float: left;
+     margin-right: 20px;
+     margin-top: 15px;
+     margin-left: 10px;
 }
 
 .pes2{
-	float: right;
-	margin-right: 20px;
-	margin-top: 15px;
+     float: right;
+     margin-right: 20px;
+     margin-top: 15px;
 }
 .dom{
-	float: right;
+     float: right;
 }
