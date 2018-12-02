@@ -1,11 +1,11 @@
-@charset "ISO-8859-1";
+@charset "UTF-8";
 body{
-	background-image: url("fon2.jpg");
+    background-image: url("fon2.jpg");
 }
 .buttonLeft, .buttonLeftFirst, .TabbuttonLeftFirst {
-	float: left;
-	margin-top: 2px;
-	margin-right: 2px;
+    float: left;
+    margin-top: 2px;
+    margin-right: 2px;
     height:35px;
     font: bold 10pt verdana;
     background: linear-gradient(to top, #64b6f6, #b3dafb);
@@ -15,14 +15,15 @@ body{
     text-shadow: #ebf4fe 0.05em 0.05em 0.05em;	
     box-shadow: #000040 0.1em 0.1em 0.2em;	    
 }
+
 .buttonLeftFirst, .buttonLeftFirst2, .TabbuttonLeftFirst {
-	margin-left: 10%;	   
-	}
+    margin-left: 10%;	   
+}
 	
 fieldset{
-	margin-left: 10%;	
-	margin-right: 10%;		
-	background: white;
+    margin-left: 10%;	
+    margin-right: 10%;		
+    background: white;
     border-radius: 10px; 
     border: 1px solid  #2697f2; 
     box-shadow: #74733a 0.2em 0.2em 0.3em;	
@@ -32,35 +33,35 @@ fieldset{
 }
 
 h3{
-	margin-left: 10%;	
-	font: italic bold 12pt verdana;
-	color: #64b6f6;
-	text-shadow: #000040 0.1em 0.1em 0.2em;	
+    margin-left: 10%;	
+    font: italic bold 12pt verdana;
+    color: #64b6f6;
+    text-shadow: #000040 0.1em 0.1em 0.2em;	
 }
 
 .grosErreur{
-	margin-left: 10%;	
-	font: italic bold 12pt verdana;
-	color: red;
-	text-shadow: #000040 0.1em 0.1em 0.2em;		
+    margin-left: 10%;	
+    font: italic bold 12pt verdana;
+    color: red;
+    text-shadow: #000040 0.1em 0.1em 0.2em;		
 }
 
 h4{	
-	font: italic bold 12pt verdana;
-	color: #64b6f6;
-	text-shadow: #000040 0.1em 0.1em 0.2em;	
-	text-align:center;	
+    font: italic bold 12pt verdana;
+    color: #64b6f6;
+    text-shadow: #000040 0.1em 0.1em 0.2em;	
+    text-align:center;	
 }
 h2, h1{
     margin-left: 5%;	
-	font: italic bold 14pt verdana;
-	color: #64b6f6;
-	text-shadow: #000040 0.1em 0.1em 0.2em;		
+    font: italic bold 14pt verdana;
+    color: #64b6f6;
+    text-shadow: #000040 0.1em 0.1em 0.2em;		
 }
 
 h1{
-	margin-left: 7%;
-	font: italic bold 16pt verdana;	
+    margin-left: 7%;
+    font: italic bold 16pt verdana;	
 }
 .info{
     color: #283e24; 
@@ -68,35 +69,35 @@ h1{
 }
 
 .echec{
-	color: red;
+    color: red;
     font: italic 9pt verdana;   
 }
 
 .fiche{
-	margin-left: 5%;
+    margin-left: 5%;
 }
 
 header a {
-	float: right;
-	color:white;
-	text-shadow: #74733a 0.05em 0.05em 0.1em;	    
+    float: right;
+    color:white;
+    text-shadow: #74733a 0.05em 0.05em 0.1em;	    
 }
 
 .check{
-	display: block;
+    display: block;
     padding-left: 15px;
     text-indent: -15px;
     margin-left:3%;
 }
 
 legend{
-	color: #2697f2;
-	text-shadow: #000040 0.05em 0.05em 0em;	
+    color: #2697f2;
+    text-shadow: #000040 0.05em 0.05em 0em;	
 }
 .field{
-	margin-left: 3px;	
-	margin-right: none;		
-	background: white;
+    margin-left: 3px;	
+    margin-right: none;		
+    background: white;
     border: 1px solid  #2697f2; 
     box-shadow: none;	
     color:#000040;
@@ -105,13 +106,13 @@ legend{
 }
 
 .elevage{
-	color: white;
+    color: white;
 }
 
 .fiche2{
-	margin-left: 10%;
-	margin-right: none;		
-	background: white;
+    margin-left: 10%;
+    margin-right: none;		
+    background: white;
     border: 1px solid  #2697f2;
     text-shadow: #000040 0.05em 0.05em 0.1em;	
     box-shadow: #74733a 0.05em 0.05em 0.1em;
@@ -120,7 +121,7 @@ legend{
     padding-left:0%;
 }
 .imputcheck{
-	width: 13px;
+    width: 13px;
     height: 13px;
     padding: 0;
     margin:0;
@@ -129,20 +130,20 @@ legend{
     top: -1px;	
 }
 .ficheRace{
-	margin-left: 10%;	
-	width: 60%;	
-	border-collapse: collapse;	
-	background: white;
+    margin-left: 10%;	
+    width: 60%;	
+    border-collapse: collapse;	
+    background: white;
 }
 
 table{
     border-collapse: collapse;		
-	border: 2px solid white;
+    border: 2px solid white;
 }
 
 .dogtable{
-	margin-left: 10%;
-	background: white;
+    margin-left: 10%;
+    background: white;
 }
 
 .zatemnenie {
@@ -171,7 +172,9 @@ table{
     margin: auto;
     background: #fff;
 }
-.zatemnenie:target {display: block;}
+.zatemnenie:target {
+    display: block;
+}
 .close {
     display: inline-block;
     border: 1px solid #0000cc;
@@ -183,40 +186,44 @@ table{
     font-size: 14pt;
     cursor:pointer;
 }
-.close:hover {background: #e6e6ff;}
+.close:hover {
+    background: #e6e6ff;
+}
 
 .imageDedans{
-	width:300px;
+    width:300px;
 }   
    
-.dogtable>tr:nth-child(even) { background: #ffffff; }
+.dogtable>tr:nth-child(even) { 
+    background: #ffffff; 
+}
 
 td, th{
-	height: 50px;
-	width: 200px;
-	margin-right: 15px;
-	padding: 5px;
-	border: 1px solid #d1d2d0;
+    height: 50px;
+    width: 200px;
+    margin-right: 15px;
+    padding: 5px;
+    border: 1px solid #d1d2d0;
 }
 
 .resultatReceherche{
-	float:left;
-	background: white;
-	border: 1px solid #0c71c2;
-	padding: 5px;
-	margin:5px;
-	width: 250px;
-	height:250px; 
-	cursor: pointer;
+    float:left;
+    background: white;
+    border: 1px solid #0c71c2;
+    padding: 5px;
+    margin:5px;
+    width: 250px;
+    height:250px; 
+    cursor: pointer;
 }
 
 
 .imageRecherche{
-	width: 240px;
+    width: 240px;
 }
 
 .resultatGlobal{
-	margin-left:7%;
+    margin-left:7%;
 }
 .prog1, .prog2, .prog4, .prog3, .prog5, .prog6, .prog7, .prog8, .prog9, .prog10{
     background-color:#bee0fc;
@@ -296,18 +303,18 @@ td, th{
 
 
 .image{
-	height:280px;
+    height:280px;
 }
 
 input, select, textarea{
-	background: #f2f9ff;
+    background: #f2f9ff;
     padding: 4px;	
 }
 
 .dog{
-	width:200px;
-	float:right;
-	margin-right:4%;
+    width:200px;
+    float:right;
+    margin-right:4%;
 }
 
 label{
@@ -322,13 +329,13 @@ label{
 }
 
 .delete, .details{
-	float: left;
-	width: 30px;
-	background: none;
+    float: left;
+    width: 30px;
+    background: none;
 }
 
 .small{
-	width: 80px;
+    width: 80px;
 }
 
 
