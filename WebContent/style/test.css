@@ -1,16 +1,16 @@
 body{
-	background-image: url("fon2.jpg");
+    background-image: url("fon2.jpg");
 }
 .liens{
-	display: flex;
-	position: absolute;
-	align: right;
+    display: flex;
+    position: absolute;
+    align: right;
 }
 h3{
-	margin-left: 10%;	
-	font: italic bold 14pt Comic Sans MS;
-	color: white;
-	text-shadow: #000040 0.05em 0.05em 0.1em;	
+    margin-left: 10%;	
+    font: italic bold 14pt Comic Sans MS;
+    color: white;
+    text-shadow: #000040 0.05em 0.05em 0.1em;	
 }
 .adAcces{
     position:absolute;
@@ -48,37 +48,37 @@ h3{
 }
 
 .menu li{
-	float:none;
+    float:none;
     margin-left:5%;
-	align: center;
+    align: center;
 }
 
 .menu li a{
-	color: #0c71c2;
-	font-family: Comic Sans MS;
-	text-decoration: none;
+    color: #0c71c2;
+    font-family: Comic Sans MS;
+    text-decoration: none;
 }
 
 .dom{
-	float: right;
+    float: right;
 }
 
 fieldset{
-	margin-left: 10%;	
-	margin-right: 10%;		
-	background: rgba(255,255,255,.6);
-	border: 3px double #0c71c2; 
+    margin-left: 10%;	
+    margin-right: 10%;		
+    background: rgba(255,255,255,.6);
+    border: 3px double #0c71c2; 
     border-radius: 20px; 
     box-shadow: #000040 0.3em 0.3em 0.5em;	
     color: #0c71c2;
-	font-family: Comic Sans MS;
+    font-family: Comic Sans MS;
     padding-left:4%;
 }
 
 .buttonLeft, .buttonLeftFirst, .TabbuttonLeftFirst, .buttonLeftFirst2{
-	float: left;
-	margin-top: 2px;
-	margin-right:2px;
+    float: left;
+    margin-top: 2px;
+    margin-right:2px;
     height:35px;
     font: bold 10pt verdana;
     background: linear-gradient(to top, #64b6f6, #b3dafb);
@@ -90,24 +90,24 @@ fieldset{
 }
 
 .buttonLeftFirst, .buttonLeftFirst2, .TabbuttonLeftFirst {
-	margin-left: 10%;	   
+    margin-left: 10%;	   
 }
 	
 .left{
-	float:left;
+    float:left;
     background:#d9dde1;
 }	
 
 .leftFirst{
-	float:left;
-	margin-left: 5%;
-	background:#d9dde1;
+    float:left;
+    margin-left: 5%;
+    background:#d9dde1;
 }
 
 .dog{
-	float: right;
+    float: right;
 }
 
 .echec{
-	color: red;
+    color: red;
 }
