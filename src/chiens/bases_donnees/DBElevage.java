@@ -11,14 +11,14 @@ import chiens.beans.ElevageBean;
 
 public class DBElevage {
 	private static String TABLE = "elevage";
-    private static DBCatalogue DBC = new DBCatalogue(TABLE);
+	private static DBCatalogue DBC = new DBCatalogue(TABLE);
     
-        /*retourne true si un nom de race passé en paramètre existe déjà dans le tableau "elevage"*/
+        /*retourne true si un nom de race passÃ© en paramÃ¨tre existe dÃ©jÃ  dans le tableau "elevage"*/
         public boolean raceExiste(String nom_race) throws Exception  {  
 	        return DBC.xExiste(nom_race, "nom_elevage");
 	    }
 	    
-        /*retourne ElevageBean representant une élévage dont le code est passé en paramètre*/
+        /*retourne ElevageBean representant une Ã©lÃ©vage dont le code est passÃ© en paramÃ¨tre*/
         public static ElevageBean getElevage(String code) {
         	ElevageBean elevage = null;
         	try(Connection conn = DBConnection.getConnection();
@@ -40,17 +40,17 @@ public class DBElevage {
         	return elevage;
         }
         
-        /*supprime une élévage dont le code est passé en paramètre du tableau "elevage"*/
+        /*supprime une Ã©lÃ©vage dont le code est passÃ© en paramÃ¨tre du tableau "elevage"*/
 	    public static void deleteElevage(String code) {
 	    	DBC.deleteX(code, "code_elevage");
         }
 	
-	    /*retourne le nom de l'élévage du tableau "elevage" dont le code est passé en paramètre*/
+	    /*retourne le nom de l'Ã©lÃ©vage du tableau "elevage" dont le code est passÃ© en paramÃ¨tre*/
 	    public static String getNomParCode(Integer code) {
 	        return DBC.getNomParCode(code, "code_elevage", "nom_elevage");
 	    }
 	
-	    /*retourne une collection de ElevageBean representants toutes les élévages du tableau "elevage"*/
+	    /*retourne une collection de ElevageBean representants toutes les Ã©lÃ©vages du tableau "elevage"*/
 		public static ArrayList<ElevageBean> getElevageList(){
 		   ArrayList<ElevageBean> listElevages = new ArrayList<ElevageBean>();	
 		   try(Connection conn=DBConnection.getConnection();
@@ -72,8 +72,8 @@ public class DBElevage {
 		   return listElevages;
 	    }
 		 
-		/*ajoute une élévage dans le tableau "elevage" à partir de données de ElevageBean passé
-		 * en paramètre et retourne une clé généré automatiquement si l'opération est reussi et
+		/*ajoute une Ã©lÃ©vage dans le tableau "elevage" Ã  partir de donnÃ©es de ElevageBean passÃ©
+		 * en paramÃ¨tre et retourne une clÃ© gÃ©nÃ©rÃ© automatiquement si l'opÃ©ration est reussi et
 		 * null dans le cas contraire*/
 	    public static Integer addElevage(ElevageBean elevage) {
 		    Connection conn = null;  
@@ -103,9 +103,9 @@ public class DBElevage {
 	      return generKey;
 	   }
 	    
-	    /*remplace une élévage dont le code est le code de ElevageBean passé en paramètre 
-	     * dans le tableau "elevage" à partir de données de ElevageBean passé
-		 * en paramètre*/
+	    /*remplace une Ã©lÃ©vage dont le code est le code de ElevageBean passÃ© en paramÃ¨tre 
+	     * dans le tableau "elevage" Ã  partir de donnÃ©es de ElevageBean passÃ©
+		 * en paramÃ¨tre*/
 	   public static void updatElevage(ElevageBean elevage) {
 		    Connection conn = null;  
 			PreparedStatement prstm = null;	
