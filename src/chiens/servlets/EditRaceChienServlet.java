@@ -21,29 +21,29 @@ public class EditRaceChienServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private String filePath;
 	
-	   public void init( ){
-		      filePath = "C:\\Users\\huiny\\eclipse-workspace\\chiens\\WebContent\\images"; 
-		   }	
+public void init( ){
+	filePath = "C:\\Users\\huiny\\eclipse-workspace\\chiens\\WebContent\\images"; 
+}	
 	
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public EditRaceChienServlet() {
+public EditRaceChienServlet() {
         super();
-    }
+}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
     
-    /*gère les changements dans la race de chiens */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    /*gÃ¨re les changements dans la race de chiens */
+protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		try {
 			EditionRaceChien newRace = new EditionRaceChien(request, filePath);
-			if(newRace.isSucces()) {//si les changements ont été bien enregistrés dans la base
+			if(newRace.isSucces()) {//si les changements ont Ã©tÃ© bien enregistrÃ©s dans la base
 				 RaceChien race_chien = new RaceChien(Integer.parseInt(newRace.getCode()));
-				 //les données necessaires pour l'affichage sont définies 
+				 //les donnÃ©es necessaires pour l'affichage sont dÃ©finies 
 				 request.setAttribute("type_poils", race_chien.getType_poils());
 			     request.setAttribute("aptitudes", race_chien.getAptitudes());
 			     request.setAttribute("couleurs", race_chien.getCouleurs());
@@ -53,7 +53,7 @@ public class EditRaceChienServlet extends HttpServlet {
 		  		 RequestDispatcher rd = sc.getRequestDispatcher("/administrateur/ficheRaceChien.jsp"); 
 		  		 rd.forward(request, response);
 			}
-			else {//si les changements n'ont pas été enregistré 
+			else {//si les changements n'ont pas Ã©tÃ© enregistrÃ© 
 				 ServletContext sc = request.getSession().getServletContext();
 		  		 RequestDispatcher rd = sc.getRequestDispatcher("/administrateur/erreur.jsp");
 		  		 rd.forward(request, response);
