@@ -21,7 +21,7 @@ import chiens.metier.Catalogues;
  */
 @WebServlet("/ListRaceChienServlet")
 public class ListRaceChienServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -33,11 +33,11 @@ public class ListRaceChienServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-    /*gère l'affichage des races de chiens*/
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    /*gÃ¨re l'affichage des races de chiens*/
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		String whatsend = request.getParameter("whatsend");
-		/*retourne la collection des races de chiens regroupée par alphabet*/
+		/*retourne la collection des races de chiens regroupÃ©e par alphabet*/
 		if(whatsend.equals("racesParAlphabet")) {
 			request.setAttribute("aptitudes", Catalogues.getMapAptitudes());
 			request.setAttribute("listraces", Catalogues.getListRacesAlphabet());
@@ -59,32 +59,32 @@ public class ListRaceChienServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	/*gère la suppression d'une race de chiens*/
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	/*gÃ¨re la suppression d'une race de chiens*/
+     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		String whatsend = request.getParameter("whatsend");
-		/*c'est la prèmiere demande de suppression d'une race, on affiche une fenêtre de confirmation*/
+		/*c'est la prÃ¨miere demande de suppression d'une race, on affiche une fenÃªtre de confirmation*/
 		if(whatsend.equals("delete")) {
 			String code = request.getParameter("element");
 			String nom = DBRaceChien.getNomParCode(Integer.parseInt(code));
 			setAttrRace(request);
 			request.setAttribute("code", code);
-			request.setAttribute("nom", nom);/*pour une demande de confirmation personnalisée*/
+			request.setAttribute("nom", nom);/*pour une demande de confirmation personnalisÃ©e*/
 			request.setAttribute("confirmation", true);
 			ServletContext sc = request.getSession().getServletContext();    
 			RequestDispatcher rd = sc.getRequestDispatcher("/administrateur/listeRacesChien.jsp"); 
 			rd.forward(request, response);
 		}
-		/*c'est après la confirmation de suppression de la race de chiens*/
+		/*c'est aprÃ¨s la confirmation de suppression de la race de chiens*/
 		else if(whatsend.equals("SuppressionConfirme")) {
 			String code=request.getParameter("element");
 			/*avant de supprimer une race il faut supprimer tous les liens avec son code dans 
-			 * les autres tableaux qui en font référence par foreign key*/
+			 * les autres tableaux qui en font rÃ©fÃ©rence par foreign key*/
 			DBCouleurChien.deleteCouleurParCodeChien(code);/*on supprime les liens code race-code couleur*/
 			DBAptitudeChien.deleteAptitudeChien(code);/*ensuite les liens code arace-code aptitude*/
 			DBPoilsChien.deleteTypePoilsChien(code);/* code race-code type poils*/
-			DBElevageRace.deleteElevageParCodeRace(code);/* code race-code élévage*/
-			DBRaceChien.deleteRace(code);/*et maintenant on peut proceder à la suppression de la race même*/
+			DBElevageRace.deleteElevageParCodeRace(code);/* code race-code Ã©lÃ©vage*/
+			DBRaceChien.deleteRace(code);/*et maintenant on peut proceder Ã  la suppression de la race mÃªme*/
 			setAttrRace(request);/*on inicialise les variables de request necessaires pour l'affichege 
 			du tableau des race resultant*/
 			ServletContext sc = request.getSession().getServletContext();    
@@ -93,7 +93,7 @@ public class ListRaceChienServlet extends HttpServlet {
 		}
 	}
 	
-	private static void setAttrRace(HttpServletRequest request) {
+   private static void setAttrRace(HttpServletRequest request) {
 		request.setAttribute("aptitudes", Catalogues.getMapAptitudes());
 	    request.setAttribute("listraces", Catalogues.getListRaces());
 		request.setAttribute("pays", Catalogues.getMapDePays());
