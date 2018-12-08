@@ -24,32 +24,32 @@ public class CouleurServlet extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CouleurServlet() {
+    	public CouleurServlet() {
         super();
-    }
+   	 }
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-    /*gère la création de nouvelle couleur à partir de "formCouleur.jsp" */
+    /*gÃ¨re la crÃ©ation de nouvelle couleur Ã  partir de "formCouleur.jsp" */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		Couleur newCouleur = new Couleur();
 		try {
-			/*crée une nouvelle couleur à partir de l'information saisie par l'utilisateur*/
+			/*crÃ©e une nouvelle couleur Ã  partir de l'information saisie par l'utilisateur*/
 			CouleurBean couleur=newCouleur.creerCouleur(request);
 			if(couleur==null) {
-			//si la CouleurBean n'a pas été crée le message d'erreur est retourné
+			//si la CouleurBean n'a pas Ã©tÃ© crÃ©e le message d'erreur est retournÃ©
 				   request.setAttribute("message", newCouleur.getMessage());
 				   ServletContext sc = request.getSession().getServletContext();  
-				   //le request est rederigé sur la page de formulaire
+				   //le request est rederigÃ© sur la page de formulaire
 		  		   RequestDispatcher rd = sc.getRequestDispatcher("/administrateur/formCouleur.jsp"); 
 		  		   rd.forward(request, response);
 			}
-			else {//si la CouleurBean a été crée avec succès
+			else {//si la CouleurBean a Ã©tÃ© crÃ©e avec succÃ¨s
 				   request.setAttribute("couleur", couleur);
 		           ServletContext sc = request.getSession().getServletContext();
-		           //le request est redirigé sur la page de succes
+		           //le request est redirigÃ© sur la page de succes
 	  		       RequestDispatcher rd = sc.getRequestDispatcher("/administrateur/succesCouleur.jsp"); 
 	  		       rd.forward(request, response);
 			}
