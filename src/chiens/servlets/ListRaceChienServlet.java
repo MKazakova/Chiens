@@ -20,21 +20,21 @@ import chiens.metier.Catalogues;
  * Servlet implementation class ListRaceChienServlet
  */
 @WebServlet("/ListRaceChienServlet")
-public class ListRaceChienServlet extends HttpServlet {
-    private static final long serialVersionUID = 1L;
+	public class ListRaceChienServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public ListRaceChienServlet() {
+       /**
+       * @see HttpServlet#HttpServlet()
+       */
+	public ListRaceChienServlet() {
         super();
-    }
+	    }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-    /*gère l'affichage des races de chiens*/
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+      /*gère l'affichage des races de chiens*/
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		String whatsend = request.getParameter("whatsend");
 		/*retourne la collection des races de chiens regroupée par alphabet*/
@@ -60,7 +60,7 @@ public class ListRaceChienServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	/*gère la suppression d'une race de chiens*/
-     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		String whatsend = request.getParameter("whatsend");
 		/*c'est la prèmiere demande de suppression d'une race, on affiche une fenêtre de confirmation*/
@@ -93,7 +93,7 @@ public class ListRaceChienServlet extends HttpServlet {
 		}
 	}
 	
-   private static void setAttrRace(HttpServletRequest request) {
+	private static void setAttrRace(HttpServletRequest request) {
 		request.setAttribute("aptitudes", Catalogues.getMapAptitudes());
 	    request.setAttribute("listraces", Catalogues.getListRaces());
 		request.setAttribute("pays", Catalogues.getMapDePays());
