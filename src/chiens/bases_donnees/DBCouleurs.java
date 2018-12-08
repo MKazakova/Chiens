@@ -9,19 +9,19 @@ import java.util.ArrayList;
 import chiens.beans.CouleurBean;
 
 public class DBCouleurs {
-  private static final String CODE_COULEUR = "code_couleur";
-  private static final String NOM_COULEUR = "nom_couleur"; 
-  private static final String TABLE = "couleurs";
-  private static final DBCatalogue DBC = new DBCatalogue(TABLE);	
+  	private static final String CODE_COULEUR = "code_couleur";
+  	private static final String NOM_COULEUR = "nom_couleur"; 
+  	private static final String TABLE = "couleurs";
+  	private static final DBCatalogue DBC = new DBCatalogue(TABLE);	
   
-     /*retourne true si le nom de couleur passÈ en paramËtre existe dÈj‡ dans la base
+     /*retourne true si le nom de couleur pass√© en param√®tre existe d√©j√† dans la base
       * du tableau "couleurs"*/
 	 public boolean couleurExiste(String couleur) throws Exception  {  
 		return DBC.xExiste(couleur, NOM_COULEUR);
 	 }
 
-	 /*ajoute un nom de couleur passÈ en paramËtre dans un tableau "couleurs"
-	  * et retourne le clÈ gÈnÈrÈ automatiquement si l'enregistrement est reussi*/
+	 /*ajoute un nom de couleur pass√© en param√®tre dans un tableau "couleurs"
+	  * et retourne le cl√© g√©n√©r√© automatiquement si l'enregistrement est reussi*/
 	 public Integer ajouterCouleur(String nom_couleur) {
 	      return DBC.ajouterX(nom_couleur, NOM_COULEUR);
 	 }
@@ -45,12 +45,12 @@ public class DBCouleurs {
 	   return listCouleurs;
 	 }
 	 
-	 /*retourne le nom de couleur du tableau "couleurs" dont le code est passÈ en paramËtre*/
+	 /*retourne le nom de couleur du tableau "couleurs" dont le code est pass√© en param√®tre*/
 	 public static String getNomParCode(Integer code) {
 		  return DBC.getNomParCode(code, CODE_COULEUR, NOM_COULEUR);
 	 }
 	 
-	 /*supprime une couleur du tableau "couleurs" dont le code est passÈ en paramËtre*/
+	 /*supprime une couleur du tableau "couleurs" dont le code est pass√© en param√®tre*/
 	 public static void deleteCouleur(String code) {
 		  DBC.deleteX(code, CODE_COULEUR);
 	 }
