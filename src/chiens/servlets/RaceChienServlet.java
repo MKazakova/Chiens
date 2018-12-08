@@ -28,22 +28,22 @@ public class RaceChienServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private String filePath;
 	   
-	   public void init( ){
+	public void init( ){
 	      filePath = "C:\\Users\\huiny\\eclipse-workspace\\chiens\\WebContent\\images"; 
 	   }
 	   
-	   /*L'affichage d'information sur une race de chiens particulière*/
-	   public void doPost(HttpServletRequest request, HttpServletResponse response)
+	   /*L'affichage d'information sur une race de chiens particuliÃ¨re*/
+	public void doPost(HttpServletRequest request, HttpServletResponse response)
 	      throws ServletException, java.io.IOException { 
 		   request.setCharacterEncoding("UTF-8");
 		   String whatsend = request.getParameter("whatsend");
 		   if(whatsend==null) {
-		     try {/*en arrivant ici a	près l'envoie du formulaire de création d'une nouvelle race 
-		         *on essaie de créer une nouvelle race dans le tableau des races de chiens*/
+		     try {/*en arrivant ici a	prÃ¨s l'envoie du formulaire de crÃ©ation d'une nouvelle race 
+		         *on essaie de crÃ©er une nouvelle race dans le tableau des races de chiens*/
 			   CreationRaceChien newRace = new CreationRaceChien(request, filePath);
 			   if(newRace.isSucces()) {
-				      /*si la création est reussie l'utilisateur est envoyé sur la page
-			           *de l'information sur la race qui vient d'être crée, avec la posibilité de modification*/
+				      /*si la crÃ©ation est reussie l'utilisateur est envoyÃ© sur la page
+			           *de l'information sur la race qui vient d'Ãªtre crÃ©e, avec la posibilitÃ© de modification*/
 				       getDetails(newRace.getCode(),request);
 					   request.setAttribute("newRace", true);
 				       ServletContext sc = request.getSession().getServletContext();    
@@ -51,8 +51,8 @@ public class RaceChienServlet extends HttpServlet {
 			  		   rd.forward(request, response);
 			   }
 			   else {
-				/*sinon l'utilisateur est renvoyé sur la page de formulaire de saisie avec le/les messages
-				 * d'erreur expliquants le problème*/
+				/*sinon l'utilisateur est renvoyÃ© sur la page de formulaire de saisie avec le/les messages
+				 * d'erreur expliquants le problÃ¨me*/
 				   	   request.setAttribute("erreurs", newRace.getErreurs());
 				   	   request.setAttribute("newrace", newRace.getRaceChien());
 				   	   ServletContext sc = request.getSession().getServletContext();    
@@ -67,7 +67,7 @@ public class RaceChienServlet extends HttpServlet {
 		  }
 		 }
 		 else if(whatsend.equals("details")) {
-			 /*donne l'information sur une race de chien dont le code est envoyé dans la request*/
+			 /*donne l'information sur une race de chien dont le code est envoyÃ© dans la request*/
 			 String codeRaceDetails = request.getParameter("element");
 			 getDetails(Integer.parseInt(codeRaceDetails),request);
 			 ServletContext sc = request.getSession().getServletContext();
@@ -75,15 +75,15 @@ public class RaceChienServlet extends HttpServlet {
 		  	 rd.forward(request, response); 
 		 }
 		 else if(whatsend.equals("editer")) {
-			 /*retourne l'information necessaire pour l'affichage du formulaire de l'édition de race */
+			 /*retourne l'information necessaire pour l'affichage du formulaire de l'Ã©dition de race */
 			 String code=request.getParameter("element");
 			   try {
 				 RaceChien race_chien = new RaceChien(Integer.parseInt(code));
 			     request.setAttribute("race", race_chien.getChien());
-			     /*un nom de pays d'origine de race actuel pour le cas où l'utilisateur veux laisser le pays
+			     /*un nom de pays d'origine de race actuel pour le cas oÃ¹ l'utilisateur veux laisser le pays
 			      *actuel sans le changer*/
 			     request.setAttribute("pays", race_chien.getNom_pays());
-			     /*un liste des autres pays(tous les pays de la base sauf le pays choisie actuellement) pour le cas où
+			     /*un liste des autres pays(tous les pays de la base sauf le pays choisie actuellement) pour le cas oÃ¹
 			      * l'utilisateur veux changer le pays de provenance de race*/
 			     request.setAttribute("payslist", Catalogues.getAutrePays(""+race_chien.getChien().getPays_provenance()));
 			     /*la liste des aptitudes courantes de la race*/
@@ -121,7 +121,7 @@ public class RaceChienServlet extends HttpServlet {
 		   RequestDispatcher rd = sc.getRequestDispatcher("/administrateur/formRaceChien.jsp"); 
 		   rd.forward(request, response);
 	    }
-		/*renvoie l'information sur une race de chiens données choisie à partir
+		/*renvoie l'information sur une race de chiens donnÃ©es choisie Ã  partir
 		 *de liste de race de chiens par alphabet */
 	    else if(whatsend.equals("rechercheAlpha")) {
 		   String code = request.getParameter("code");
