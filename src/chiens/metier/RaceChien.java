@@ -11,23 +11,23 @@ import chiens.beans.RaceChienBean;
 
 public class RaceChien {
 	
-	/* une classe qui contient tous les caaractèristiques essentiels d'une race de chien */
-    private RaceChienBean chien;//les caractèristiques propres
-	private String nom_pays;//le pays de provenance d'une race
+	/* une classe qui contient tous les caaractÃ¨ristiques essentiels d'une race de chien */
+    private RaceChienBean chien;//les caractÃ¨ristiques propres
+    private String nom_pays;//le pays de provenance d'une race
     private ArrayList <String> aptitudes;//les aptitudes que cette race a
     private ArrayList <String> couleurs;//les couleurs possibles de la race
     private ArrayList <String> type_poils;//les types de poils de la race
     
 	public RaceChien(Integer code) {
 		
-		/*on recoupère les caracteristiques de la race par code*/
+		/*on recoupÃ¨re les caracteristiques de la race par code*/
 		chien = DBRaceChien.getRaceChien(code);
 		
 		/*on recoupere le nom de pays du tableau pays par son code*/
 		nom_pays=DBPays.getNomDePays(chien.getPays_provenance());
 		try {
 			/* on recoupere les aptitudes, les couleurs et les types de poils 
-			 * dans la base de données par le code de race */
+			 * dans la base de donnÃ©es par le code de race */
 			aptitudes=DBAptitudeChien.getAptitudesDeRace(code);
 			couleurs=DBCouleurChien.getCouleursDeRace(code);
 		    type_poils=DBPoilsChien.getTypePoilsRace(code);
