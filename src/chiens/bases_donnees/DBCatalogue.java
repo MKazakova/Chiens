@@ -12,8 +12,8 @@ public class DBCatalogue {
 	private Connection conn;
 	private PreparedStatement prstm;
 	private final String TABLE;
-        private String CHAMP1;
-        private String CHAMP2;
+	private String CHAMP1;
+	private String CHAMP2;
 	
     
 	public DBCatalogue(String table){
