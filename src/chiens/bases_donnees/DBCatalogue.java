@@ -6,14 +6,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-/*une class utilitaire avec les methodes effectuant les opérations les plus courant dans le programme*/
+/*une class utilitaire avec les methodes effectuant les opÃ©rations les plus courant dans le programme*/
 public class DBCatalogue {
 	private ResultSet rs;
 	private Connection conn;
 	private PreparedStatement prstm;
 	private final String TABLE;
-    private String CHAMP1;
-    private String CHAMP2;
+        private String CHAMP1;
+        private String CHAMP2;
 	
     
 	public DBCatalogue(String table){
@@ -26,8 +26,8 @@ public class DBCatalogue {
 		this.CHAMP2=champ2;
 	}
 	
-	/*retourne true si un champs passé en parametre contient une
-	 *valeur passée en parametre */
+	/*retourne true si un champs passÃ© en parametre contient une
+	 *valeur passÃ©e en parametre */
 	public boolean xExiste(String valeur, String champ) {  
 		boolean existe=false;
 		conn = null;  
@@ -55,7 +55,7 @@ public class DBCatalogue {
 	      return existe;
 	}
 	
-	/*ajoute une valeur dans le champ donné*/
+	/*ajoute une valeur dans le champ donnÃ©*/
 	public Integer ajouterX(String valeur, String champ) {
 	    conn = null;  
 		prstm = null;	
@@ -77,8 +77,8 @@ public class DBCatalogue {
       return generKey;
    }
 	
-	/*supprime les enregistrements ou un champ passé en paramètre est égale à
-	 * une valeur passé en paramètre*/
+	/*supprime les enregistrements ou un champ passÃ© en paramÃ¨tre est Ã©gale Ã 
+	 * une valeur passÃ© en paramÃ¨tre*/
 	public void deleteX(String valeur, String champ) {
     	conn = null;  
    		prstm = null;	
@@ -95,7 +95,7 @@ public class DBCatalogue {
          }
     }
 	
-	/*retourne une String comme valeur d'un nom ou la valeur de code est égale à une Integer passé en paramètre*/
+	/*retourne une String comme valeur d'un nom ou la valeur de code est Ã©gale Ã  une Integer passÃ© en paramÃ¨tre*/
 	public String getNomParCode(Integer code, String champCode, String champNom) {
 		  conn = null;  
 		  prstm = null;	
@@ -121,7 +121,7 @@ public class DBCatalogue {
 		  return nom;
 		}
 	
-	/*retourne true s'il y a un enregistrement liant deux valeurs(codes) passées en paramètres*/
+	/*retourne true s'il y a un enregistrement liant deux valeurs(codes) passÃ©es en paramÃ¨tres*/
 	public boolean lienExiste(Integer code1, Integer code2) throws Exception  {  
 		boolean existe=false;
 		conn = null;  
@@ -152,7 +152,7 @@ public class DBCatalogue {
 	  return existe;
 	}
 	
-	/*ajoute deux valeurs dans les champs passées comme paramètres de constructeur*/
+	/*ajoute deux valeurs dans les champs passÃ©es comme paramÃ¨tres de constructeur*/
 	public boolean addlien(Integer code1, Integer code2) {
 		boolean succes=false;
 	    conn = null;  
