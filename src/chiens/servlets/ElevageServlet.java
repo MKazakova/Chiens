@@ -27,33 +27,33 @@ public class ElevageServlet extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ElevageServlet() {
-        super();
-    }
+        public ElevageServlet() {
+          super();
+        }
     
-    /* gère l'ajout et l'affichage des élévages */
+    /* gÃ¨re l'ajout et l'affichage des Ã©lÃ©vages */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
 		String whatsend = request.getParameter("whatsend");
-		/* redirige vers la page de forme de l'élévage pour ajouter un élévage*/
+		/* redirige vers la page de forme de l'Ã©lÃ©vage pour ajouter un Ã©lÃ©vage*/
 		if(whatsend.equals("ajouter")) {
 			request.setAttribute("races", Catalogues.getListRaces());
 			ServletContext sc = request.getSession().getServletContext();    
 			RequestDispatcher rd = sc.getRequestDispatcher("/administrateur/formElevages.jsp"); 
 			rd.forward(request, response);
 		}
-		else if(whatsend.equals("elevagesDeRace")) {//affichage du tableau des élévages
+		else if(whatsend.equals("elevagesDeRace")) {//affichage du tableau des Ã©lÃ©vages
 			String code = request.getParameter("code");
 			
-			if(code.equals("0")) {//si le code est égale à 0, on affiche tous les élévages existants
+			if(code.equals("0")) {//si le code est Ã©gale Ã  0, on affiche tous les Ã©lÃ©vages existants
 				request.setAttribute("elevages", Catalogues.getListElevages());
 				request.setAttribute("touteselevages", true);
 			}
-			else{//sinon on affiche des élévages où la race du code donnée est élévée
+			else{//sinon on affiche des Ã©lÃ©vages oÃ¹ la race du code donnÃ©e est Ã©lÃ©vÃ©e
 				request.setAttribute("nom", DBRaceChien.getNomParCode(Integer.parseInt(code)));
 				request.setAttribute("elevages", DBElevageRace.getElevagesDeRace(code));
 				request.setAttribute("elevrace", true);
 			}
-			/*redirige à la page d'accueil l'information sur les élévages*/
+			/*redirige Ã  la page d'accueil l'information sur les Ã©lÃ©vages*/
 			request.setAttribute("elevages_races", Catalogues.getMapRacesParElevage());	
 			ServletContext sc = request.getSession().getServletContext(); 
 			RequestDispatcher rd = sc.getRequestDispatcher("/user/page_d_accueil.jsp"); 
@@ -65,15 +65,15 @@ public class ElevageServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		String whatsend = request.getParameter("whatsend");
 		
-		/* envoie l'information nécessaire à la page de formulaire pour éditer un élévage*/
+		/* envoie l'information nÃ©cessaire Ã  la page de formulaire pour Ã©diter un Ã©lÃ©vage*/
 		if(whatsend.equals("editerElevage")) {
 			
 			String code = request.getParameter("element");
 			ElevageBean elb = Catalogues.getElevageParCode(code);
-			/*crée deux Maps différents, un avec les races élévées dans l'élévage donnée et l'autre
-			 *avec les races de la base qui ne sont pas élévées dans l'élévage donné */ 
-			Map<Integer, String> races_presents = Catalogues.getRacesElevéesDansElevage(code, true);
-			Map<Integer, String> races_absents = Catalogues.getRacesElevéesDansElevage(code, false);
+			/*crÃ©e deux Maps diffÃ©rents, un avec les races Ã©lÃ©vÃ©es dans l'Ã©lÃ©vage donnÃ©e et l'autre
+			 *avec les races de la base qui ne sont pas Ã©lÃ©vÃ©es dans l'Ã©lÃ©vage donnÃ© */ 
+			Map<Integer, String> races_presents = Catalogues.getRacesElevÃ©esDansElevage(code, true);
+			Map<Integer, String> races_absents = Catalogues.getRacesElevÃ©esDansElevage(code, false);
 			request.setAttribute("races_presents", races_presents);
 			request.setAttribute("races_absents", races_absents);
 			request.setAttribute("elevage", elb);
@@ -81,13 +81,13 @@ public class ElevageServlet extends HttpServlet {
 			RequestDispatcher rd = sc.getRequestDispatcher("/administrateur/editElevage.jsp"); 
 			rd.forward(request, response);
 	    }
-		/* gère l'enregistrement des changements dans un élévage */
+		/* gÃ¨re l'enregistrement des changements dans un Ã©lÃ©vage */
 		else if(whatsend.equals("updatElevage")){
 			
 		    Elevage elevage = new Elevage();
 		    
 			try {
-				/*crée un ElevageBean à partir de l'information saisie par l'utilisateur 
+				/*crÃ©e un ElevageBean Ã  partir de l'information saisie par l'utilisateur 
 				 * et l'ajoute dans le tableau*/
 				ElevageBean elb =elevage.editElevage(request);
 				if(elevage.isAjoute()) {
@@ -111,24 +111,24 @@ public class ElevageServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
-		/* gère la création de nouvel élévage  */
+		/* gÃ¨re la crÃ©ation de nouvel Ã©lÃ©vage  */
 	    else if(whatsend.equals("creerElevage")){
 	    	
 	    Elevage elevage = new Elevage();
 	    
 		try {
-			/*crée un ElevageBean à partir de l'information saisie par l'utilisateur*/
+			/*crÃ©e un ElevageBean Ã  partir de l'information saisie par l'utilisateur*/
 			ElevageBean elb =elevage.creerElevage(request);
 			
 			if(elevage.isAjoute()) {
-				/* si l'élévage a été ajouter dans la base avec succes */
+				/* si l'Ã©lÃ©vage a Ã©tÃ© ajouter dans la base avec succes */
 				request.setAttribute("elevage", elb);
 				ServletContext sc = request.getSession().getServletContext();    
 				RequestDispatcher rd = sc.getRequestDispatcher("/administrateur/ficheElevage.jsp"); 
 				rd.forward(request, response);
 			}
 			else { 
-				/* sinon reçoit un message d'erreur et le renvoie à la page de formulaire*/
+				/* sinon reÃ§oit un message d'erreur et le renvoie Ã  la page de formulaire*/
 				request.setAttribute("erreurs", elevage.getErreurs());
 				request.setAttribute("races", Catalogues.getListRaces());
 				request.setAttribute("elevage", elb);
