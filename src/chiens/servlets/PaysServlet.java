@@ -23,31 +23,31 @@ public class PaysServlet extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public PaysServlet() {
+public PaysServlet() {
         super();
-    }
+}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-    /*l'ajout d'un nouveau pays dans la base de données*/
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    /*l'ajout d'un nouveau pays dans la base de donnÃ©es*/
+protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		Pays newPays = new Pays();
 		try {
-			/*on ajoute un pays dans la base et crée un PaysBean à partir de l'information
+			/*on ajoute un pays dans la base et crÃ©e un PaysBean Ã  partir de l'information
 			 * saisie par l'utilisateur*/
 			PaysBean pays=newPays.creerPays(request);
 			if(pays==null) {
-				   /*si l'ajout n'est pas reussie l'utilisateur est renvoyé à la page
-				    * du formulaire et le message d'erreur correspondant à son cas est renvoyé*/	
+				   /*si l'ajout n'est pas reussie l'utilisateur est renvoyÃ© Ã  la page
+				    * du formulaire et le message d'erreur correspondant Ã  son cas est renvoyÃ©*/	
 				   request.setAttribute("message", newPays.getMessage());
 				   ServletContext sc = request.getSession().getServletContext();    
 		  		   RequestDispatcher rd = sc.getRequestDispatcher("/administrateur/formPays.jsp"); 
 		  		   rd.forward(request, response);
 			}
-			else {/*si l'ajout de pays est reussie l'utilisateur est renvoyé à la page qui confirme 
-			       * l'ajout du pays et donne son code autogénéré dans le tableau des pays*/
+			else {/*si l'ajout de pays est reussie l'utilisateur est renvoyÃ© Ã  la page qui confirme 
+			       * l'ajout du pays et donne son code autogÃ©nÃ©rÃ© dans le tableau des pays*/
 				   request.setAttribute("pays", pays);
 		           ServletContext sc = request.getSession().getServletContext();    
 	  		       RequestDispatcher rd = sc.getRequestDispatcher("/administrateur/succesPays.jsp"); 
