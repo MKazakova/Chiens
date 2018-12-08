@@ -131,10 +131,10 @@ public class RaceChienServlet extends HttpServlet {
 	  	   RequestDispatcher rd = sc.getRequestDispatcher("/user/page_d_accueil.jsp"); 
 	  	   rd.forward(request, response);
 	    }
-    }
+     }
 
 	/*initialise les attributes les plus courantes pour l'affichage de l'information sur la race de chiens*/
-    private static void getDetails(Integer codeRaceDetails, HttpServletRequest request ){
+     private static void getDetails(Integer codeRaceDetails, HttpServletRequest request ){
     	RaceChien race_chien = null;
 		race_chien = new RaceChien(codeRaceDetails);
 		request.setAttribute("type_poils", race_chien.getType_poils());
