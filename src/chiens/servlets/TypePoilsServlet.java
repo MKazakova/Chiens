@@ -23,15 +23,15 @@ public class TypePoilsServlet extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public TypePoilsServlet() {
+ public TypePoilsServlet() {
         super();
-    }
+ }
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
     /*le methode gère l'ajout de nouveau type de poils dans le tableau type_poils*/
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+  protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		Poils newTypePoils = new Poils();
 		try {
