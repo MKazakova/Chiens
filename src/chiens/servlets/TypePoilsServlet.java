@@ -18,7 +18,7 @@ import chiens.metier.Poils;
  */
 @WebServlet("/TypePoilsServlet")
 public class TypePoilsServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -30,32 +30,32 @@ public class TypePoilsServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-    /*le methode gère l'ajout de nouveau type de poils dans le tableau type_poils*/
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    /*le methode gÃ¨re l'ajout de nouveau type de poils dans le tableau type_poils*/
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		Poils newTypePoils = new Poils();
 		try {
-			/*On essaie de créer un type de poils à partir de l'information saisie*/
+			/*On essaie de crÃ©er un type de poils Ã  partir de l'information saisie*/
 			TypePoilsBean TypePoils=newTypePoils.creerTypePoils(request);
 			if(TypePoils==null) {
-				   /*si le nouveau type de poils de chien n'a pas pu être crée on renvoie l'utilisateur
-				    * sur la page du formulaire et affiche un message d'erreur expliquant où était le problème*/
+				   /*si le nouveau type de poils de chien n'a pas pu Ãªtre crÃ©e on renvoie l'utilisateur
+				    * sur la page du formulaire et affiche un message d'erreur expliquant oÃ¹ Ã©tait le problÃ¨me*/
 				   request.setAttribute("message", newTypePoils.getMessage());
 				   ServletContext sc = request.getSession().getServletContext();    
 		  		   RequestDispatcher rd = sc.getRequestDispatcher("/administrateur/formPoils.jsp"); 
 		  		   rd.forward(request, response);
 			}
 			else { 
-				   /*si le nouveau type de poils avait été ajouté dans la base,
-				    * l'utilisateur est redirigé sur la page de succèss ou le code de 
-				    * nouveau type de poils généré automatiquement est affiché avec le nom de type de poils*/
+				   /*si le nouveau type de poils avait Ã©tÃ© ajoutÃ© dans la base,
+				    * l'utilisateur est redirigÃ© sur la page de succÃ¨ss ou le code de 
+				    * nouveau type de poils gÃ©nÃ©rÃ© automatiquement est affichÃ© avec le nom de type de poils*/
 				   request.setAttribute("poils", TypePoils);
 		           ServletContext sc = request.getSession().getServletContext();    
 	  		       RequestDispatcher rd = sc.getRequestDispatcher("/administrateur/succesTypePoils.jsp"); 
 	  		       rd.forward(request, response);
 			}
 		} catch (Exception e) {
-			/*le cas où il y avait un problème d'ordre technique*/
+			/*le cas oÃ¹ il y avait un problÃ¨me d'ordre technique*/
 			ServletContext sc = request.getSession().getServletContext();
 	        RequestDispatcher rd = sc.getRequestDispatcher("/administrateur/erreur.jsp"); 
 		    rd.forward(request, response);
