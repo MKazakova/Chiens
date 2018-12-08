@@ -248,11 +248,11 @@ public class CreationRaceChien {
 	}
 	
 	/* verifie que le nom de race ne contient pas de chiffres et de longueur coherente*/
-    public boolean verifNomRace(String nom) {
+    	public boolean verifNomRace(String nom) {
 		return nom.matches("[^0-9]{2,30}");
-    }
+    	}
 
-    /*retourne RaceChienBean contenant les données de nouvelle race qui vient d'être crée*/
+    	/*retourne RaceChienBean contenant les données de nouvelle race qui vient d'être crée*/
 	public RaceChienBean getRaceChien() {
 		return raceChien;
 	}
