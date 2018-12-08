@@ -7,18 +7,18 @@ import chiens.beans.AptitudeBean;
 
 public class Aptitude {
 	String nom_aptitude;
-    String MESSAGE;
+	String MESSAGE;
     
-    /*crée une aptitude et l'ajout dans le tableau */
+    /*crÃ©e une aptitude et l'ajout dans le tableau */
     public AptitudeBean creerAptitude(HttpServletRequest request) throws Exception {
     	
     	request.setCharacterEncoding("UTF-8");
        	AptitudeBean newAptitude = null;
     	nom_aptitude=request.getParameter("nomAptitude");
     	
-    	/*si le nom saisie est vide le message d'erreur est initié*/
+    	/*si le nom saisie est vide le message d'erreur est initiÃ©*/
     	if(nom_aptitude==null||nom_aptitude.isEmpty()) {
-    		MESSAGE="L'aptitude ne doit pas être vide";	
+    		MESSAGE="L'aptitude ne doit pas Ãªtre vide";	
     	}
     	/*si le nom du pays saisie n'est pas au bon format*/
     	else if(!verifNomPays(nom_aptitude)){
@@ -26,8 +26,8 @@ public class Aptitude {
     	}
     	/*si le format saisie est correcte*/
     	else {
-    		if(DBAptitude.aptitudeExiste(nom_aptitude)) {//si le nom existe déjà dans la base
-    			MESSAGE=nom_aptitude+" existe déjà dans la base";
+    		if(DBAptitude.aptitudeExiste(nom_aptitude)) {//si le nom existe dÃ©jÃ  dans la base
+    			MESSAGE=nom_aptitude+" existe dÃ©jÃ  dans la base";
     		}
     		else{
     			newAptitude = new AptitudeBean();
