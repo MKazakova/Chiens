@@ -14,25 +14,25 @@ public class DBPays {
 	private static final String CODE_PAYS = "code_pays";
 	private static final String NOM_PAYS = "nom_pays"; 
 	private static final String TABLE = "pays";
-    private static final DBCatalogue DBC = new DBCatalogue(TABLE);
+	private static final DBCatalogue DBC = new DBCatalogue(TABLE);
     
-    /*retourne true si le nom de pays, passÈ en paramËtre, existe dÈj‡ dans le tableau "pays"*/
+    /*retourne true si le nom de pays, pass√© en param√®tre, existe d√©j√† dans le tableau "pays"*/
 	public boolean nomExiste(String nom) throws Exception  {  
 	      return DBC.xExiste(nom, NOM_PAYS);
 	}
 
-	/*ajoute un nom de pays(String passÈ en paramËtre) dans le tableau "pays" des pays et
-	 * retourne un code de pays gÈnÈrÈ automatiquement*/
+	/*ajoute un nom de pays(String pass√© en param√®tre) dans le tableau "pays" des pays et
+	 * retourne un code de pays g√©n√©r√© automatiquement*/
 	 public Integer ajouterPays(String nom_pays) {
 	      return DBC.ajouterX(nom_pays, NOM_PAYS);
 	 }
 	 
-	 /*supprime le pays, dont le code est passÈ en paramËtre, du tableau "pays"*/
+	 /*supprime le pays, dont le code est pass√© en param√®tre, du tableau "pays"*/
 	 public static void deletePays(String code) {
 		  DBC.deleteX(code, CODE_PAYS);
 	 }
 	 
-	 /*retourne le nom de pays dont le code est passÈ en paramËtre*/
+	 /*retourne le nom de pays dont le code est pass√© en param√®tre*/
 	 public static String getNomDePays(Integer code) {
 		   return DBC.getNomParCode(code, CODE_PAYS, NOM_PAYS);
 	 }
@@ -58,7 +58,7 @@ public class DBPays {
 	  }
 	
 	 /*retourne une collection ArayList de type PaysBean representant tous
-	  * les pays du tableau "pays" sauf le pays dont le code est passÈ en paramËtre*/
+	  * les pays du tableau "pays" sauf le pays dont le code est pass√© en param√®tre*/
 	 public ArrayList<PaysBean> getPaysListAutre(String code){
 		    ArrayList<PaysBean> listPays = new ArrayList<PaysBean>();
 		    Connection conn = null;  
@@ -86,7 +86,7 @@ public class DBPays {
 		 }
 	 
 	 /*retourne une collection HashMap avec les codes de tous les pays existantes dans le 
-	  *tableau "pays" comme clÈs et leurs noms comme valeurs*/
+	  *tableau "pays" comme cl√©s et leurs noms comme valeurs*/
 	 public static HashMap <Integer, String> getPaysMap(){
 		    HashMap<Integer, String> listPays = new HashMap<Integer, String>();	
 			try(Connection conn=DBConnection.getConnection();
@@ -104,8 +104,8 @@ public class DBPays {
 		 }
 	 
 	 /* retourne une collection HashMap avec les codes de tous les pays du tableau "pays" comme
-	  * clÈs et une chaine de caractËre avec le noms de toutes les races provenantes de ce pays 
-	  * separÈs par virgule et concatÈnÈs ensemble comme valeurs */
+	  * cl√©s et une chaine de caract√®re avec le noms de toutes les races provenantes de ce pays 
+	  * separ√©s par virgule et concat√©n√©s ensemble comme valeurs */
 	 public static HashMap<Integer, String> getMapChiensPaysX(){
 		 HashMap<Integer, String> races_pays = new HashMap<Integer, String>();
 		
