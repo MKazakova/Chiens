@@ -32,20 +32,20 @@ public class EditionRaceChien {
 	 private String fieldName;
 	 private String fieldValeur;
 	 private ArrayList<Integer> aptitudes = new ArrayList<Integer>();
-     private ArrayList<Integer> couleurs = new ArrayList<Integer>();
-     private ArrayList<Integer> poils = new ArrayList<Integer>();
-     private DBRaceChien dbr= new DBRaceChien();
-     private String code=null;
+	 private ArrayList<Integer> couleurs = new ArrayList<Integer>();
+	 private ArrayList<Integer> poils = new ArrayList<Integer>();
+	 private DBRaceChien dbr= new DBRaceChien();
+	 private String code=null;
 	 boolean succes=false;
 	 
-	    /* recoupère les changements dans une race de chien à partir de formulaire de type "multipart/form-data" 
-	     * car le formulaire reçoit une photo d'un chien de race correspondante entre autres */ 
+	    /* recoupÃ¨re les changements dans une race de chien Ã  partir de formulaire de type "multipart/form-data" 
+	     * car le formulaire reÃ§oit une photo d'un chien de race correspondante entre autres */ 
 	public EditionRaceChien(HttpServletRequest request, String path) throws UnsupportedEncodingException{
 
 		      request.setCharacterEncoding("UTF-8");
 		      filePath=path;
 		      isMultipart = ServletFileUpload.isMultipartContent(request);
-		      /*verifie si les données de request sont bien de type MultipartContent*/
+		      /*verifie si les donnÃ©es de request sont bien de type MultipartContent*/
 		      if( !isMultipart ) {
 		         return;
 		      }
@@ -61,22 +61,22 @@ public class EditionRaceChien {
 		      upload.setSizeMax( maxFileSize );
 		      try { 
 		         List fileItems = upload.parseRequest(request);
-		         /* traite les éléments du formulaire*/
+		         /* traite les Ã©lÃ©ments du formulaire*/
 		         Iterator i = fileItems.iterator();
 		         while ( i.hasNext () ) {
 		            FileItem fi = (FileItem)i.next();
-		            /* d'abord on verifie si un élément donné est une photo, ou un champs de formulaire de type String*/
+		            /* d'abord on verifie si un Ã©lÃ©ment donnÃ© est une photo, ou un champs de formulaire de type String*/
 		            if ( fi.isFormField () ) {//si ce n'est pas une photo
 			               fieldName = fi.getFieldName();//on prend le nom du champ pour le traiter en consequence
-			               fieldValeur =new String(fi.getString().getBytes(), "UTF-8");//on reçoit une valeur du champ
+			               fieldValeur =new String(fi.getString().getBytes(), "UTF-8");//on reÃ§oit une valeur du champ
 			               if(fieldName.equals("nomRace")) {//un nom de race 
 			            	   if(fieldValeur.isEmpty()||fieldValeur==null||!verifNomRace(fieldValeur)) {// on verifie que le nom n'est pas vide
-			            		   erreurs.put("nom_race", "Le nom de la race ne doit pas être vide");
+			            		   erreurs.put("nom_race", "Le nom de la race ne doit pas Ãªtre vide");
 			            	   }//si tout va bien, on initialise le champs "nom_race" de RaceChienBean 
 			            	   else raceChien.setNom_race(fieldValeur);
 			               }
 			               else if(fieldName.equals("paysProvenance")) {//le champs nom de pays de provenance
-			            	   if(!fieldValeur.equals("rien")) {//si le pays était choisie dans "select"
+			            	   if(!fieldValeur.equals("rien")) {//si le pays Ã©tait choisie dans "select"
 			            		   raceChien.setPays_provenance(Integer.parseInt(fieldValeur));     
 			            	   }//sinon un message d'erreur 
 			            	   else erreurs.put("pays", "Veillez choisir un pays");
@@ -109,18 +109,18 @@ public class EditionRaceChien {
 			               else if(fieldName.equals("couleurChien")) {//il y une valeur par default dans "select", donc pas de verification 
 			            	   couleurs.add(Integer.parseInt(fieldValeur));
 			               }
-			               else if(fieldName.equals("imageRace")) {//que une nouvelle image soit chargé ou pas, le nom de l'image reste le même
+			               else if(fieldName.equals("imageRace")) {//que une nouvelle image soit chargÃ© ou pas, le nom de l'image reste le mÃªme
 			            	   raceChien.setImage(fieldValeur);
 			               }
-			               else if(fieldName.equals("description")) {//description n'est pas obligatoire et n'est pas contrôlé, donc pas de verification 
+			               else if(fieldName.equals("description")) {//description n'est pas obligatoire et n'est pas contrÃ´lÃ©, donc pas de verification 
 			            	   raceChien.setDescription(fieldValeur);
 			               }
 			               else if(fieldName.equals("poidsMin")) { 
 			            	           String kilos;
 			            	           if(fieldValeur.isEmpty()||fieldValeur==null) {//verifie si le champs n'est pas vide
-			            	        	   erreurs.put("poids", "Le champ de poids ne doit pas être vide");
+			            	        	   erreurs.put("poids", "Le champ de poids ne doit pas Ãªtre vide");
 			            	           }
-			            	           else {//cela permet à l'utilisateur d'inserer soit "," soit "." pour separer les décimales
+			            	           else {//cela permet Ã  l'utilisateur d'inserer soit "," soit "." pour separer les dÃ©cimales
 			            	               kilos=fieldValeur.replace(',', '.');
 			            	           try {
 			            	        	  raceChien.setPoids_min(Double.parseDouble(kilos)); 
@@ -129,11 +129,11 @@ public class EditionRaceChien {
 			            	        	   erreurs.put("poids", "Le format de poids minimal n'est pas bon");
 			            	           }
 			            	           }
-			               }/*les mêmes verifications pour le poids maximale*/
+			               }/*les mÃªmes verifications pour le poids maximale*/
 			               else if(fieldName.equals("poidsMax")){
 	            	           String kilos;
 	            	           if(fieldValeur.isEmpty()||fieldValeur==null) {
-	            	        	   erreurs.put("poids", "Le champ de poids ne doit pas être vide");
+	            	        	   erreurs.put("poids", "Le champ de poids ne doit pas Ãªtre vide");
 	            	           }
 	            	           else {
 	            	        	   kilos=fieldValeur.replace(',', '.');
@@ -149,11 +149,11 @@ public class EditionRaceChien {
 			               else if(fieldName.equals("tailleMin")){//s'il s'agit du champs de taille
 			            	   //on verifie que le champ n'est pas vide
 	            	           if(fieldValeur.isEmpty()||fieldValeur==null) {
-	            	        	   erreurs.put("taille", "Le champ de taille ne doit pas être vide");
+	            	        	   erreurs.put("taille", "Le champ de taille ne doit pas Ãªtre vide");
 	            	           }
 	            	           else {
 	            	        	   try {
-	            	        		 //analyse une chaîne de caractère fournie et initialyse un champ taille_min
+	            	        		 //analyse une chaÃ®ne de caractÃ¨re fournie et initialyse un champ taille_min
 	            	        		   raceChien.setTaille_min(Integer.parseInt(fieldValeur)); 
 	            	        	   }
 	            	        	   catch(NumberFormatException e) {
@@ -163,7 +163,7 @@ public class EditionRaceChien {
 	                       }/*les verifications similazires concernant la taille maximale*/
 			               else if(fieldName.equals("tailleMax")){
 			            	   if(fieldValeur.isEmpty()||fieldValeur==null) {
-			            		   erreurs.put("taille", "Le champ de taille ne doit pas être vide");
+			            		   erreurs.put("taille", "Le champ de taille ne doit pas Ãªtre vide");
 			            	   }
 	            	           else {
 	            	        	   try {
@@ -202,11 +202,11 @@ public class EditionRaceChien {
 		      }
 		      catch(Exception ex) {}
 		      		if(erreurs.isEmpty()) {
-		      			/*si aucune erreur n'était généré lors de création de bean, 
+		      			/*si aucune erreur n'Ã©tait gÃ©nÃ©rÃ© lors de crÃ©ation de bean, 
 			      		 * on enregistre cette race dans une base
 			      		 */
 		      			try {
-		      				/*variable qui signale que la race avait été ajouter avec succes*/
+		      				/*variable qui signale que la race avait Ã©tÃ© ajouter avec succes*/
 		      				succes=dbr.editRace(raceChien);
 		      				if(succes) {
 		      					/*on supprime les liens qui existe actuellement entre une race de chiens
