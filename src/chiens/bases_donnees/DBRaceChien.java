@@ -14,26 +14,26 @@ public class DBRaceChien {
 	private static final String CODE_RACE = "code_race";
 	private static final String NOM_RACE = "nom_race"; 
 	private static final String TABLE = "races_chiens";
-    private static final DBCatalogue DBC = new DBCatalogue(TABLE);
+	private static final DBCatalogue DBC = new DBCatalogue(TABLE);
     
-    /*retourne true si un nom de la race passé en paramètre existe déjà
+    /*retourne true si un nom de la race passÃ© en paramÃ¨tre existe dÃ©jÃ 
      * dans le tableau "races_chiens"*/
 	public boolean raceExiste(String nom_race) throws Exception  {  
 	      return DBC.xExiste(nom_race, NOM_RACE);
 	}
 	
-	/*supprime une race dont le code est passé en paramètre du tableau "races_chiens"*/
+	/*supprime une race dont le code est passÃ© en paramÃ¨tre du tableau "races_chiens"*/
 	public static void deleteRace(String code) {
 		  DBC.deleteX(code, CODE_RACE);
     }
 	
-	/*retourne un nom de race dont le code est passé en paramètre*/
+	/*retourne un nom de race dont le code est passÃ© en paramÃ¨tre*/
 	public static String getNomParCode(Integer code) {
 	      return DBC.getNomParCode(code, CODE_RACE, NOM_RACE);
 	}
 	
-	/*prend en paramètre RaceChienBean et crée un enregistrement correspondant 
-	 * dans le tableau "races_chiens" et retourne un entier representant un code de race de chien généré automatiquement*/
+	/*prend en paramÃ¨tre RaceChienBean et crÃ©e un enregistrement correspondant 
+	 * dans le tableau "races_chiens" et retourne un entier representant un code de race de chien gÃ©nÃ©rÃ© automatiquement*/
 	public Integer addRace(RaceChienBean race) {
 		Connection conn = null;  
 		PreparedStatement prstm = null;	
@@ -70,8 +70,8 @@ public class DBRaceChien {
       return generKey;
     }
 	
-	/*retourne un RaceChienBean =, representant les données de la race de chiens dont le code est passé
-	 * en paramètre */
+	/*retourne un RaceChienBean =, representant les donnÃ©es de la race de chiens dont le code est passÃ©
+	 * en paramÃ¨tre */
 	public static RaceChienBean getRaceChien(Integer code) {
 		RaceChienBean chienTrouve = new RaceChienBean();
 		Connection conn = null;  
@@ -138,8 +138,8 @@ public class DBRaceChien {
 		return chiens;
 	}
 	
-	/*remplace un enregistrement de la race de chiens où le code de race est égale à un code de race de RaceChienBean
-	 * et remplace toute information sauf code par l'information de RaceChienBean retourne true si l'opération est
+	/*remplace un enregistrement de la race de chiens oÃ¹ le code de race est Ã©gale Ã  un code de race de RaceChienBean
+	 * et remplace toute information sauf code par l'information de RaceChienBean retourne true si l'opÃ©ration est
 	 * reussi*/
 	public boolean editRace(RaceChienBean race) {
 		boolean succes=false;
@@ -176,7 +176,7 @@ public class DBRaceChien {
     }
     
 	/*retourne true si le tableau races_chiens contient des races dont le code du pays de provenance est
-	 * égale à un code passé en paramètre*/
+	 * Ã©gale Ã  un code passÃ© en paramÃ¨tre*/
 	public static boolean RacesOriginairesExistent(String code) {
 		boolean existe=false;
 		Connection conn = null;  
