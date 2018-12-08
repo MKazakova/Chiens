@@ -18,7 +18,7 @@ import chiens.bases_donnees.DBAccesAdmin;
  */
 @WebServlet("/AccesAdminServlet")
 public class AccesAdminServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -30,16 +30,16 @@ public class AccesAdminServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-    /*gère la fenêtre d'autorisation d'administrateur de la page d'accueil "user/page_d_accueil.jsp"*/
+    /*gÃ¨re la fenÃªtre d'autorisation d'administrateur de la page d'accueil "user/page_d_accueil.jsp"*/
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String whatsend = request.getParameter("whatsend");
-		if(whatsend.equals("connection")) {//ouvre la fenêtre d'autorisation d'administrateur
+		if(whatsend.equals("connection")) {//ouvre la fenÃªtre d'autorisation d'administrateur
 			  request.setAttribute("admin", true);
 	          ServletContext sc = request.getSession().getServletContext();    
 	  		  RequestDispatcher rd = sc.getRequestDispatcher("/user/page_d_accueil.jsp"); 
 	  		  rd.forward(request, response);
 		}
-		else if(whatsend.equals("deconnection")) {//ferme la fenêtre d'autorisation d'administrateur
+		else if(whatsend.equals("deconnection")) {//ferme la fenÃªtre d'autorisation d'administrateur
 		      HttpSession session = request.getSession();
 			  session.invalidate();
 		      session = request.getSession(false);
@@ -53,22 +53,22 @@ public class AccesAdminServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		  String whatsend = request.getParameter("whatsend");
-		  if(whatsend.equals("autorisation")) {//autorisation d'un administrateur pour acceder à l'espace d'admin
+		  if(whatsend.equals("autorisation")) {//autorisation d'un administrateur pour acceder Ã  l'espace d'admin
 		         String mot_passe=request.getParameter("motpasse");
 		         String message="";
 		         if(mot_passe!=null&&!mot_passe.isEmpty()) {//verifie si le champ mot de passe n'est pas vide
 		        	      DBAccesAdmin databaseAcces = new DBAccesAdmin();
 		        	      try {
-							if(databaseAcces.verifAcces(mot_passe)) {//si le mot de passé correspond à celui de la base
+							if(databaseAcces.verifAcces(mot_passe)) {//si le mot de passÃ© correspond Ã  celui de la base
 								  HttpSession session = request.getSession();
-								  /*cree une variable de session administrateur dont la valeur est égale à true, 
+								  /*cree une variable de session administrateur dont la valeur est Ã©gale Ã  true, 
 								   *pour que le Filtre permet d'acceder au contenu avec acces restreint*/
 								  session.setAttribute("administrateur", true);
 								  response.sendRedirect(request.getContextPath()+"/user/page_d_accueil.jsp");
 							      }
 							else {//si le mot de passe n'est pas correct
-							  	  message = databaseAcces.getMessage();//recoupere un message d'erreur pour le transmettre à l'utilisateur
-								  request.setAttribute("admin", true);//pour garder la fenêtre d'autorisation ouverte
+							  	  message = databaseAcces.getMessage();//recoupere un message d'erreur pour le transmettre Ã  l'utilisateur
+								  request.setAttribute("admin", true);//pour garder la fenÃªtre d'autorisation ouverte
 						          request.setAttribute("message", message);//transmet le message d'erreur
 						          ServletContext sc = request.getSession().getServletContext();    
 						  		  RequestDispatcher rd = sc.getRequestDispatcher("/user/page_d_accueil.jsp"); 
@@ -80,11 +80,11 @@ public class AccesAdminServlet extends HttpServlet {
 						   }
 		          }
 		         else { //si le champ de mot de passe est vide 
-		          message="Le mot de passe ne doit pas être vide";
-		          request.setAttribute("admin", true);//pour garder la fenêtre ouverte
+		          message="Le mot de passe ne doit pas Ãªtre vide";
+		          request.setAttribute("admin", true);//pour garder la fenÃªtre ouverte
 		          request.setAttribute("message", message);//un message pour l'utilisateur
 		          ServletContext sc = request.getSession().getServletContext();    
-		  		  RequestDispatcher rd = sc.getRequestDispatcher("/user/page_d_accueil.jsp");//retourne à la page d'accueil
+		  		  RequestDispatcher rd = sc.getRequestDispatcher("/user/page_d_accueil.jsp");//retourne Ã  la page d'accueil
 		  		  rd.forward(request, response);
 		          }
           }
@@ -99,20 +99,20 @@ public class AccesAdminServlet extends HttpServlet {
 		        		 &&nouveauMotPasse.length()>=4) {//si les saisies sont correct
 		        	      DBAccesAdmin databaseAcces = new DBAccesAdmin();
 		        	      try {
-							if(databaseAcces.verifAcces(ancienMotPasse)) {//compare l'ancien mot de passe avec celui de la base de données
-								//si ancien mot de passe est correcte, procède au changement
+							if(databaseAcces.verifAcces(ancienMotPasse)) {//compare l'ancien mot de passe avec celui de la base de donnÃ©es
+								//si ancien mot de passe est correcte, procÃ¨de au changement
 								if(databaseAcces.changerMotPasse(nouveauMotPasse)>0) {//si le changement est reussi
-									  ServletContext sc = request.getSession().getServletContext();//envoie à la page de confirmation du changement reussi    
+									  ServletContext sc = request.getSession().getServletContext();//envoie Ã  la page de confirmation du changement reussi    
 							  		  RequestDispatcher rd = sc.getRequestDispatcher("/administrateur/succesNouveauMP.jsp"); 
 							  		  rd.forward(request, response);
 								}
 								else{//si le changement n'est pas reussi
-									  ServletContext sc = request.getSession().getServletContext(); //envoie à la page d'erreur       
+									  ServletContext sc = request.getSession().getServletContext(); //envoie Ã  la page d'erreur       
 							  		  RequestDispatcher rd = sc.getRequestDispatcher("/administrateur/erreur.jsp"); 
 							  		  rd.forward(request, response);
 								} 
 							 }
-							 else {//si l'ancien mot de passe saisie ne correspond pas à celui de la base
+							 else {//si l'ancien mot de passe saisie ne correspond pas Ã  celui de la base
 								  erreurAncienMotPasse = databaseAcces.getMessage();
 								  request.setAttribute("admin", true);
 						          request.setAttribute("message", erreurAncienMotPasse);
@@ -125,14 +125,14 @@ public class AccesAdminServlet extends HttpServlet {
 							e.printStackTrace();
 						   }
 		          }
-		          else{//si les saisies sont correct, crée les messages correspondants au types d'erreurs
+		          else{//si les saisies sont correct, crÃ©e les messages correspondants au types d'erreurs
 		    	    if(ancienMotPasse==null||ancienMotPasse.isEmpty()) {
-		    	    	erreurAncienMotPasse="Le mot de passe ne doit pas être vide";
+		    	    	erreurAncienMotPasse="Le mot de passe ne doit pas Ãªtre vide";
 		    	    }
 		    	    if(nouveauMotPasse==null||nouveauMotPasse.length()<4) {
-		    	    	erreurNouveauMotPasse="Le nouveau mot de passe doit être formé d'au moins 4 caractères";
+		    	    	erreurNouveauMotPasse="Le nouveau mot de passe doit Ãªtre formÃ© d'au moins 4 caractÃ¨res";
 		    	    }
-		    	    //transmet les messages d'erreur à l'utilisateur
+		    	    //transmet les messages d'erreur Ã  l'utilisateur
 	                request.setAttribute("message", erreurAncienMotPasse);
 	                request.setAttribute("message2", erreurNouveauMotPasse);
 	                ServletContext sc = request.getSession().getServletContext();    
@@ -142,7 +142,7 @@ public class AccesAdminServlet extends HttpServlet {
        }
 	   else if(whatsend.equals("deconnection")) {//deconnection de l'administrateur, l'espace d'administrateur n'est plus accessible
 		      HttpSession session = request.getSession();
-			  session.setAttribute("administrateur", false);//remet la variable de session "administrateur" à false
+			  session.setAttribute("administrateur", false);//remet la variable de session "administrateur" Ã  false
 			  response.sendRedirect(request.getContextPath()+"/user/page_d_accueil.jsp");
 	   }
 	}  
